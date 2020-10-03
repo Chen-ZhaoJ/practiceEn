@@ -1,5 +1,5 @@
 //
-//  FeatureCell.swift
+//  CategoryCell.swift
 //  practiceEn
 //
 //  Created by zencher on 2020/10/2.
@@ -8,14 +8,17 @@
 
 import UIKit
 
-class FeatureCell: UITableViewCell {
 
-    @IBOutlet weak var userImage: UIImageView!
+
+class CategoryCell: UITableViewCell {
+
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        userImage.layer.cornerRadius = userImage.frame.size.width / 2
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
