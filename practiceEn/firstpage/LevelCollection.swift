@@ -66,7 +66,7 @@ class LevelCollection: UICollectionView,UICollectionViewDataSource,UICollectionV
         cell?.layer.borderWidth = 2
         let name = arrayofIDs[indexPath.row]
         let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: name)
-        self.window?.rootViewController = UINavigationController(rootViewController:controller)
+//        self.window?.rootViewController = UINavigationController(rootViewController:controller)
        
         
        

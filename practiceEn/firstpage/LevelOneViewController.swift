@@ -9,9 +9,7 @@
 import UIKit
 
 class LevelOneViewController: UIViewController {
-    var fullSize :CGSize!
-    var myUIView :UIView!
-    var anotherUIView :UIView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +28,11 @@ class LevelOneViewController: UIViewController {
       
        
        
-        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "FirstpageViewController") as! FirstpageViewController
-        self.navigationController?.pushViewController(controller, animated: true)
-       
+//        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "FirstpageViewController") as! FirstpageViewController
+//        self.navigationController?.pushViewController(controller, animated: true)
+        let controller = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarController") as! UITabBarController
+//               self.navigationController?.pushViewController(controller, animated: true)
+//       
 
     }
     override func viewDidAppear(_ animated: Bool) {
