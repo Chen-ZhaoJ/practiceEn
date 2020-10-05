@@ -8,18 +8,24 @@
 
 import UIKit
 
-class LevelCollection: UICollectionView,UICollectionViewDataSource,UICollectionViewDelegate {
+
+
+
+
+class LevelCollection: UICollectionView,UICollectionViewDataSource,UICollectionViewDelegate{
+    
+    
     
    
     
     
     
-    let levelImages:[UIImage] = [
+    var levelImages:[UIImage] = [
         UIImage(named: "level1")!,
         UIImage(named: "level2")!,
         UIImage(named: "level3")!,
     ]
-    
+    var arrayofIDs = [String]()
     
         
     override func awakeFromNib() {
@@ -31,7 +37,7 @@ class LevelCollection: UICollectionView,UICollectionViewDataSource,UICollectionV
         //垂直行间距
         flow.minimumLineSpacing = 25.0
         flow.sectionInset = UIEdgeInsets(top: 10, left:40, bottom: 0, right: 40)
-       
+       arrayofIDs = ["A","B"]
         
        }
     
@@ -51,14 +57,19 @@ class LevelCollection: UICollectionView,UICollectionViewDataSource,UICollectionV
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+           
+        
+        
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderColor = UIColor.gray.cgColor
         cell?.layer.borderWidth = 2
+        let name = arrayofIDs[indexPath.row]
+        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: name)
+        self.window?.rootViewController = UINavigationController(rootViewController:controller)
        
-        if indexPath.item == 0{
-            
-        }
         
+       
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)

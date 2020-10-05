@@ -8,7 +8,10 @@
 
 import UIKit
 
+
 class FirstpageViewController: UIViewController{
+   
+    
     
     
 
@@ -16,6 +19,7 @@ class FirstpageViewController: UIViewController{
     
     override func viewDidLoad() {
            super.viewDidLoad()
-           
+           navigationItem.hidesBackButton = true
        }
 }
+

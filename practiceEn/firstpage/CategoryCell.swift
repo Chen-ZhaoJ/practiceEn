@@ -12,6 +12,7 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
 
+    weak var delegate:UITableView?
     
     
     

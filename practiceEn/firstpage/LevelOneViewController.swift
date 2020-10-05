@@ -9,13 +9,35 @@
 import UIKit
 
 class LevelOneViewController: UIViewController {
+    var fullSize :CGSize!
+    var myUIView :UIView!
+    var anotherUIView :UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+       let swipeRight = UISwipeGestureRecognizer(
+         target:self,
+         action:#selector(LevelOneViewController.swipe))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+
     }
-    
+    @objc func swipe(recognizer:UISwipeGestureRecognizer) {
+        print("right")
+         
+      
+       
+       
+        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "FirstpageViewController") as! FirstpageViewController
+        self.navigationController?.pushViewController(controller, animated: true)
+       
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
 
     /*
     // MARK: - Navigation
