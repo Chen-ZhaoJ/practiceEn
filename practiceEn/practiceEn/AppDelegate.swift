@@ -9,12 +9,35 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,SINClientDelegate,SINCallDelegate{
+    
+    var window: UIWindow?
+    var client: SINClient?
+    
+    func clientDidStart(_ client: SINClient!) {
+        print("clientDidStart")
+        NotificationCenter.default.post(name: .SINClientDidStart, object: nil)
+    }
+    
+    func clientDidFail(_ client: SINClient!, error: Error!) {
+        print("clientDidFail \(error.localizedDescription)")
+    }
+    
+    
+    func client(_ client: SINCallClient!,didReceiveIncomingCall  call: SINCall!) {
+        print("didReceiveIncomingCall")
+        NotificationCenter.default.post(name: .didReceiveIncomingCall, object: call, userInfo: nil)
+    }
+    
+    
+   
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+       
         return true
     }
 
@@ -25,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
+   
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
@@ -33,5 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+extension Notification.Name {
+    static let clientDidStart = Notification.Name("SINCLIENT_DID_START")
+    static let didReceiveIncomingCall = Notification.Name("SINCLIENT_DID_RECEIVE_INCOMING_CALL")
+    
 }
 

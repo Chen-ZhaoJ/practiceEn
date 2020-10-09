@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/zencher/Documents/GitHub/practiceEn/practiceEn/firstpage/SINClientManager.swift">
+   </FileRef>
+   <FileRef
       location = "group:practiceEn.xcodeproj">
    </FileRef>
    <FileRef

@@ -15,6 +15,7 @@
 		903DB987252654B6008712E6 /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB986252654B6008712E6 /* LevelCell.swift */; };
 		903DB9BD25286F92008712E6 /* LevelOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB9BC25286F92008712E6 /* LevelOneViewController.swift */; };
 		903DB9BF252B301B008712E6 /* LevelTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB9BE252B301B008712E6 /* LevelTwoViewController.swift */; };
+		903DB9E5252F167F008712E6 /* SINClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB9E4252F167F008712E6 /* SINClientManager.swift */; };
 		903F42B92523354D0024631C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F42B82523354D0024631C /* AppDelegate.swift */; };
 		903F42BB2523354D0024631C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F42BA2523354D0024631C /* SceneDelegate.swift */; };
 		903F42BD2523354D0024631C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F42BC2523354D0024631C /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		903DB9B2252725D8008712E6 /* practiceEn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "practiceEn-Bridging-Header.h"; sourceTree = "<group>"; };
 		903DB9BC25286F92008712E6 /* LevelOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneViewController.swift; sourceTree = "<group>"; };
 		903DB9BE252B301B008712E6 /* LevelTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoViewController.swift; sourceTree = "<group>"; };
+		903DB9E4252F167F008712E6 /* SINClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SINClientManager.swift; path = /Users/zencher/Documents/GitHub/practiceEn/practiceEn/firstpage/SINClientManager.swift; sourceTree = "<absolute>"; };
 		903F42B52523354D0024631C /* practiceEn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = practiceEn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903F42B82523354D0024631C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		903F42BA2523354D0024631C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				903DB98025265421008712E6 /* FeatureCell.swift */,
 				903DB98225265445008712E6 /* CategoryCell.swift */,
 				903DB986252654B6008712E6 /* LevelCell.swift */,
+				903DB9E4252F167F008712E6 /* SINClientManager.swift */,
 			);
 			path = firstpage;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				903F42B92523354D0024631C /* AppDelegate.swift in Sources */,
 				903DB9BD25286F92008712E6 /* LevelOneViewController.swift in Sources */,
 				903F42CF252339030024631C /* SignupViewController.swift in Sources */,
+				903DB9E5252F167F008712E6 /* SINClientManager.swift in Sources */,
 				903F42BB2523354D0024631C /* SceneDelegate.swift in Sources */,
 				903DB98325265445008712E6 /* CategoryCell.swift in Sources */,
 				B0154BDF252C5C98009E5E6B /* ResetPasswordViewController.swift in Sources */,
