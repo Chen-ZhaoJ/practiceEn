@@ -199,40 +199,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSf-Wf-5w5">
-                                <rect key="frame" x="203" y="161" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Amy"/>
-                                <connections>
-                                    <action selector="LognIn:" destination="t8W-UC-icu" eventType="touchUpInside" id="ziJ-ee-eaG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akY-ND-xS7">
-                                <rect key="frame" x="203" y="234" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Lily"/>
-                                <connections>
-                                    <action selector="LognIn:" destination="t8W-UC-icu" eventType="touchUpInside" id="sal-Fz-gY6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhT-Kd-yWa">
-                                <rect key="frame" x="200" y="311" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Peter"/>
-                                <connections>
-                                    <action selector="LognIn:" destination="t8W-UC-icu" eventType="touchUpInside" id="9Nb-k6-tqg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hD-Tu-lxa">
-                                <rect key="frame" x="201" y="394" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="John"/>
-                                <connections>
-                                    <action selector="LognIn:" destination="t8W-UC-icu" eventType="touchUpInside" id="nVO-KD-uPI"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aVE-vp-T7C">
+                                <rect key="frame" x="50" y="294" width="314" height="328"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSf-Wf-5w5">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="5yy-GW-h4M"/>
+                                            <constraint firstAttribute="width" constant="200" id="gZU-yU-YlR"/>
+                                        </constraints>
+                                        <state key="normal" title="Amy"/>
+                                        <connections>
+                                            <action selector="LognIn:" destination="t8W-UC-icu" eventType="touchUpInside" id="ziJ-ee-eaG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akY-ND-xS7">
+                                        <rect key="frame" x="0.0" y="80" width="314" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="DKn-nn-5gw"/>
+                                            <constraint firstAttribute="width" constant="200" id="JSk-LQ-ILQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Lily"/>
+                                        <connections>
+                                            <action selector="LognIn:" destination="t8W-UC-icu" eventType="touchUpInside" id="sal-Fz-gY6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhT-Kd-yWa">
+                                        <rect key="frame" x="0.0" y="160" width="314" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="TtD-5V-2BA"/>
+                                            <constraint firstAttribute="height" constant="60" id="azy-pS-DI9"/>
+                                        </constraints>
+                                        <state key="normal" title="Peter"/>
+                                        <connections>
+                                            <action selector="LognIn:" destination="t8W-UC-icu" eventType="touchUpInside" id="9Nb-k6-tqg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hD-Tu-lxa">
+                                        <rect key="frame" x="0.0" y="240" width="314" height="88"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="UgA-Mw-NzV"/>
+                                            <constraint firstAttribute="height" constant="60" id="a4Z-4T-2fi"/>
+                                        </constraints>
+                                        <state key="normal" title="John"/>
+                                        <connections>
+                                            <action selector="LognIn:" destination="t8W-UC-icu" eventType="touchUpInside" id="nVO-KD-uPI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aVE-vp-T7C" firstAttribute="leading" secondItem="U20-Xq-Bt0" secondAttribute="leading" constant="50" id="Ou4-kr-klB"/>
+                            <constraint firstItem="U20-Xq-Bt0" firstAttribute="trailing" secondItem="aVE-vp-T7C" secondAttribute="trailing" constant="50" id="Xbg-pn-TCK"/>
+                            <constraint firstItem="U20-Xq-Bt0" firstAttribute="bottom" secondItem="aVE-vp-T7C" secondAttribute="bottom" constant="240" id="jcQ-ag-eo4"/>
+                            <constraint firstItem="aVE-vp-T7C" firstAttribute="top" secondItem="U20-Xq-Bt0" secondAttribute="top" constant="250" id="l5y-eU-9dT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="U20-Xq-Bt0"/>
                     </view>
                     <connections>
