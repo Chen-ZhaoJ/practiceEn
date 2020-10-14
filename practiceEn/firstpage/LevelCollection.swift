@@ -37,7 +37,7 @@ class LevelCollection: UICollectionView,UICollectionViewDataSource,UICollectionV
         //垂直行间距
         flow.minimumLineSpacing = 25.0
         flow.sectionInset = UIEdgeInsets(top: 10, left:40, bottom: 0, right: 40)
-       arrayofIDs = ["A","B"]
+       arrayofIDs = ["A","B","C"]
         
        }
     
@@ -64,8 +64,18 @@ class LevelCollection: UICollectionView,UICollectionViewDataSource,UICollectionV
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderColor = UIColor.gray.cgColor
         cell?.layer.borderWidth = 2
-        let name = arrayofIDs[indexPath.row]
-        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: name)
+        let row = [indexPath.row]
+        if row == [0] {
+            print("one")
+            
+            
+        }else if row == [1] {
+            print("two")
+//            self.window?.rootViewController!.performSegue(withIdentifier: "BSegue", sender: nil)
+        }
+        
+        
+//        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: name)
 //        self.window?.rootViewController = UINavigationController(rootViewController:controller)
        
         

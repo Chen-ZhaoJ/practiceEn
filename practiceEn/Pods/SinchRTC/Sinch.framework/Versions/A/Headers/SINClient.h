@@ -9,10 +9,13 @@
 #import <Sinch/SINForwardDeclarations.h>
 #import <Sinch/SINExport.h>
 #import <Sinch/SINAPSEnvironment.h>
+#import <Sinch/SINLogSeverity.h>
 
 SIN_EXPORT SIN_EXTERN NSString *const SINClientDidStartNotification;
 SIN_EXPORT SIN_EXTERN NSString *const SINClientDidFailNotification;
 SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
+
+#pragma mark - Log Severity
 
 #pragma mark - SINClient
 
@@ -20,7 +23,8 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
  * The SINClient is the Sinch SDK entry point.
  *
  * It provides access to the feature classes in the Sinch SDK:
- * SINCallClient and SINAudioController. It is also used to configure the user's and device's capabilities.
+ * SINMessageClient, SINCallClient and SINAudioController.
+ * It is also used to configure the user's and device's capabilities.
  *
  * ### User Identification
  *
@@ -39,6 +43,7 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
  *
  * 	// Specify the client capabilities. At least one of the messaging or calling capabilities should be enabled.
  * 	[sinchClient setSupportCalling:YES];
+ * 	[sinchClient setSupportMessaging:YES];
  * 	[sinchClient setSupportPushNotifications:YES]; // (optional)
  *
  * 	// Set your delegate object
@@ -50,7 +55,8 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
  * 	// Start listening for incoming events (calls and messages).
  * 	[sinchClient startListeningOnActiveConnection];
  *
- * 	// Use the SINCallClient to place and receive calls.
+ * 	// Use the SINCallClient to place and receive calls
+ * 	// Use the SINMessageClient  to send and receive messages
  *
  * 	// Stop listening for incoming events (calls and messages).
  * 	[sinchClient stopListeningOnActiveConnection];
@@ -101,6 +107,19 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
 - (void)setDataProtectionType:(NSFileProtectionType)type;
 
 /**
+ * Specify whether this application should support sending and receiving instant messages.
+ * Default is NO.
+ *
+ * Method should be called before calling -[SINClient start].
+ *
+ * @param supported Enable or disable support for instant messaging.
+ *
+ * @see SINMessageClient
+ *
+ */
+- (void)setSupportMessaging:(BOOL)supported;
+
+/**
  * Specify whether this device should receive incoming calls via push
  * notifications.
  *
@@ -119,7 +138,7 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
  * Specify that the Sinch SDK and platform should take care of
  * sending the push notification to the other device via the appropriate
  * push notification gateway (i.e. Apple Push Notification Service for iOS devices,
- * and Firebase Cloud Messaging (FCM) for Android devices).
+ * and Google Cloud Messaging (GCM) for Android devices).
  *
  * (This require that you have uploaded your Apple Push Notification
  * Certificate(s) on the Sinch website)
@@ -134,6 +153,37 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
  *
  */
 - (void)enableManagedPushNotifications;
+
+/**
+ * [DEPRECATED] Specify whether to keep the active connection open if the application
+ * leaves foreground.
+ *
+ * If specified to be supported, the active connection which is used for
+ * receiving incoming calls will be kept open even if the application leaves
+ * foreground. Enabling this also requires that 'voip' is specified for
+ * UIBackgroundModes in the application's Info.plist.
+ *
+ * If specified to not be supported, the application will not be running in the
+ * background, and the active connection which is used for receiving incoming
+ * calls will be closed once the application leaves foreground.
+ * (Though it will be re-opened once the application returns to foreground).
+ * If not supported, the application will be required to rely on push
+ * notifications to receive incoming calls if the application leaves foreground.
+ *
+ * If specified to be supported, the client's delegate is required to implement
+ * additional parts of the SINClientDelegate protocol. It is required to
+ * implement -[SINClientDelegate client:localNotificationForIncomingCall:]
+ *
+ * This method should be called before calling -[SINClient start].
+ *
+ * @param supported Specifies whether the active connection should be kept open
+ *                  even if the application leaves foreground.
+ *
+ * @exception NSInternalInconsistencyException Throws exception if called after
+ *                                             client is started.
+ *
+ */
+- (void)setSupportActiveConnectionInBackground:(BOOL)supported NS_DEPRECATED_IOS(4_0, 9_0, "Please use PushKit and SINManagedPush");
 
 /**
  * Start client to enable the calling functionality.
@@ -201,11 +251,10 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
  * application no longer intends to utilize the long-lived connection for
  * receiving incoming calls.
  *
- * If the intention is to completely turn off incoming calls and the
- * application is also using push notifications as a method of
- * receiving incoming calls, then the application should also
- * unregister previously registered push notification data via the
- * method -[SINClient unregisterPushNotificationDeviceToken] and/or
+ * If the intention is to completely turn off incoming calls and the application
+ * is also using push notifications as a method of receiving
+ * incoming calls, then the application should also unregister previously
+ * registered push notification data via the method
  * -[SINClient unregisterPushNotificationData].
  *
  */
@@ -222,7 +271,7 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
  *
  * @see SINNotificationResult
  */
-- (id<SINNotificationResult>)relayRemotePushNotificationPayload:(NSString *)payload __attribute((deprecated("Use Sinch Managed Push")));
+- (id<SINNotificationResult>)relayRemotePushNotificationPayload:(NSString *)payload;
 
 /**
  * Method used to forward a remote notification dictionary if using -[SINClient enableManagedPushNotifications];
@@ -235,6 +284,35 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
  * @see SINNotificationResult
  */
 - (id<SINNotificationResult>)relayRemotePushNotification:(NSDictionary *)userInfo;
+
+/**
+ * Method used to handle a local notification which has been scheduled and
+ * taken action upon by the application user.
+ *
+ * @return Value indicating outcome of the attempt to handle the notification.
+ *
+ * @param notification UILocalNotification
+ *
+ * @exception NSInternalInconsistencyException Throws exception if called before
+ *            client startup has completed.
+ *            A case when the client might not be started yet is if the
+ *            application user takes action on an local notification that is not
+ *            relevant any more. E.g. the user ignored the notification when it
+ *            was first presented, then quit the app, and the notification was
+ *            left in Notification Center and was taken action upon at a later
+ *            time.
+ *            Applications should relay all local notifications where sin_isSinchNotification
+ *            is True.
+ *
+ *
+ *            -[SINClient isStarted] may be used to guard against calling this
+ *            method at inappropriate times.
+ *
+ * @see -[SINClient isStarted]
+ * @see SINNotificationResult
+ *
+ */
+- (id<SINNotificationResult>)relayLocalNotification:(UILocalNotification *)notification;
 
 /**
  * Register device-specific data that can be used to identify this device
@@ -314,6 +392,16 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
 - (id<SINCallClient>)callClient;
 
 /**
+ *
+ * Returns the message client object for sending messages and adding
+ * delegates for message events.
+ *
+ * @see - [SINClient setSupportMessaging:]
+ *
+ */
+- (id<SINMessageClient>)messageClient;
+
+/**
  * Retrieve the interface for the audio controller, which provides access
  * to various audio related functionality, such as muting the microphone,
  * enabling the speaker, and playing ring tones.
@@ -383,5 +471,42 @@ SIN_EXPORT SIN_EXTERN NSString *const SINClientWillTerminateNotification;
  * @see SINClient
  */
 - (void)client:(id<SINClient>)client requiresRegistrationCredentials:(id<SINClientRegistration>)registrationCallback;
+
+/**
+ * The delegate object can choose to subscribe to log messages from
+ * the underlying calling functionality by implementing this method.
+ *
+ * The easiest way to log the messages is to simply write them to
+ * the device console using NSLog:
+ *
+ *     `NSLog(@"[%@] %u %@", timestamp, severity, message);`
+ *
+ * *Caution:* Only log messages with severity level `SINLogSeverityWarn`
+ * or higher to the console in release builds, to avoid flooding the
+ * device console with debugging messages.
+ *
+ * @param client The client that the log messages are coming from.
+ *
+ * @param message The message that is being logged.
+ *
+ * @param area The area that the log message relates to.
+ *
+ * @param severity The severity level of the log message. It may be one of
+ *                 the following:
+ *
+ *                  - `SINLogSeverityTrace`
+ *                  - `SINLogSeverityInfo`
+ *                  - `SINLogSeverityWarn`
+ *                  - `SINLogSeverityCritical`
+ *
+ * @param timestamp The time when the message was logged.
+ *
+ * @see SINClient
+ */
+- (void)client:(id<SINClient>)client
+    logMessage:(NSString *)message
+          area:(NSString *)area
+      severity:(SINLogSeverity)severity
+     timestamp:(NSDate *)timestamp;
 
 @end

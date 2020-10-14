@@ -136,6 +136,7 @@ typedef NS_ENUM(NSInteger, SINCallDirection) { SINCallDirectionIncoming = 0, SIN
  */
 - (void)resumeVideo;
 
+
 @end
 
 #pragma mark - SINCallDelegate
@@ -198,16 +199,16 @@ typedef NS_ENUM(NSInteger, SINCallDirection) { SINCallDirectionIncoming = 0, SIN
 - (void)callDidEstablish:(id<SINCall>)call;
 
 /**
- * Tells the delegate that the callee device can't be reached
- * directly, and it is required to wake up the callee's application
- * with a push notification.
+ * Tells the delegate that the callee device can't be reached directly,
+ * and it is required to wake up the callee's application with an
+ * Apple Push Notification (APN).
  *
- * @param call The call that requires the delegate to send an push
- *             notification to the callee device.
+ * @param call The call that requires the delegate to send an
+ *             Apple Push Notification (APN) to the callee device.
  *
  * @param pushPairs  Array of SINPushPair. Each pair identififies a certain
  *                   device that should be requested to be woken up via
- *                   push notification.
+ *                   Apple Push Notification.
  *
  *                   The push data entries are equal to what the receiver's
  *                   application passed to the method
@@ -217,7 +218,7 @@ typedef NS_ENUM(NSInteger, SINCallDirection) { SINCallDirectionIncoming = 0, SIN
  * @see SINCall
  * @see SINClient
  */
-- (void)call:(id<SINCall>)call shouldSendPushNotifications:(NSArray *)pushPairs __attribute((deprecated("Use Sinch Managed Push")));
+- (void)call:(id<SINCall>)call shouldSendPushNotifications:(NSArray *)pushPairs;
 
 /**
  * Tells the delegate that a video track has been added to the call.
@@ -228,6 +229,7 @@ typedef NS_ENUM(NSInteger, SINCallDirection) { SINCallDirectionIncoming = 0, SIN
 - (void)callDidAddVideoTrack:(id<SINCall>)call;
 - (void)callDidPauseVideoTrack:(id<SINCall>)call;
 - (void)callDidResumeVideoTrack:(id<SINCall>)call;
+
 
 @end
 

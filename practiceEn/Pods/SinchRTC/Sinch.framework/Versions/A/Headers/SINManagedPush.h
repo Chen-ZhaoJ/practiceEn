@@ -45,7 +45,8 @@ SIN_EXPORT SIN_EXTERN NSString *const SINPushTypeKey;
  * 	-(BOOL)application:(UIApplication *)application
  * 	  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
  * 	    self.push = [Sinch managedPushWithAPSEnvironment:SINAPSEnvironmentAutomatic]
- * 	    [self.push setDesiredPushType:SINPushTypeVoIP];
+ * 	    [self.push setDesiredPushTypeAutomatically];
+ * 	    [self.push registerUserNotificationSettings];
  * 	}
  *
  */
@@ -55,6 +56,18 @@ SIN_EXPORT SIN_EXTERN NSString *const SINPushTypeKey;
 @protocol SINManagedPush <NSObject>
 
 @property (nonatomic, readwrite, weak) id<SINManagedPushDelegate> delegate;
+
+/**
+ * Specify what user notification types should be used for remote push notifications.
+ *
+ * @property      userNotificationTypes
+ *
+ * Defaults to UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge
+ *
+ * userNotificationTypes should be set before invoking -[SINManagedPush setDesiredPushType:] or
+ * -[SINManagedPush setDesiredPushTypeAutomatically].
+ */
+@property (nonatomic, readwrite, assign) UIUserNotificationType userNotificationTypes;
 
 /**
  *  Requests registration of either VoIP remote notifications or regular remote
@@ -72,6 +85,16 @@ SIN_EXPORT SIN_EXTERN NSString *const SINPushTypeKey;
 - (void)setDesiredPushTypeAutomatically;
 
 /**
+ *  Similar to -[UIApplication registerUserNotificationSettings:], this will
+ *  register user notification settings based on `-[SINManagedPush
+ *  userNotificationTypes]`.
+ *
+ *  On iOS 8 or higher it will invoke `-[UIApplication registerUserNotificationSettings:]` and
+ *  on iOS 7 or lower it will invoke `-[UIApplication registerForRemoteNotificationTypes:]`.
+ */
+- (void)registerUserNotificationSettings;
+
+/**
  * Specify a display name to be used when Sinch sends a push notification on
  * behalf of the local user (e.g. for an outgoing call). This method will
  * automatically invoke `-[SINClient setPushNotificationDisplayName:]` when a
@@ -81,7 +104,7 @@ SIN_EXPORT SIN_EXTERN NSString *const SINPushTypeKey;
  *                    alert message.
  *
  * Display name will be injected into the localization string SIN_INCOMING_CALL_DISPLAY_NAME.
- * It will also be passed along in Firebase Cloud Messaging push notifications if a remote
+ * It will also be passed along in Google Cloud Messaging push notifications if a remote
  * user's device is an Android device.
  *
  * @see SINClient
@@ -93,15 +116,6 @@ SIN_EXPORT SIN_EXTERN NSString *const SINPushTypeKey;
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo;
-
-/*
- * This method may be used to indicate to the Sinch SDK that processing of a VoIP push payload is completed
- * in case it was for some reason not relayed to a SINClient instance.
- *
- * This will invoke the completion handler block provided to
- * -[PKPushRegistry pushRegistry:didReceiveIncomingPushWithPayload:forType:completion:].
- */
-- (void)didCompleteProcessingPushPayload:(NSDictionary *)payload;
 
 @end
 

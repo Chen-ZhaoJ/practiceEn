@@ -14,10 +14,10 @@ import UIKit
 class HomeTable: UITableView,UITableViewDelegate,UITableViewDataSource {
     
     
+
     
     
-  
-    override func awakeFromNib() {
+      override func awakeFromNib() {
         self.delegate = self
         self.dataSource = self
         
@@ -38,6 +38,7 @@ class HomeTable: UITableView,UITableViewDelegate,UITableViewDataSource {
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)as! CategoryCell
+            
           
             return cell
         }

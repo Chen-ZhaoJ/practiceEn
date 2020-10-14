@@ -9,14 +9,14 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate ,SINClientDelegate,SINCallDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate ,SINClientDelegate,SINCallClientDelegate{
     
     var window: UIWindow?
     var client: SINClient?
     
     func clientDidStart(_ client: SINClient!) {
         print("clientDidStart")
-        NotificationCenter.default.post(name: .SINClientDidStart, object: nil)
+        NotificationCenter.default.post(name: .clientDidStart, object: nil)
     }
     
     func clientDidFail(_ client: SINClient!, error: Error!) {

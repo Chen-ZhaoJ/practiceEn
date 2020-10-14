@@ -7,8 +7,10 @@
 #import <Foundation/Foundation.h>
 
 /**
- * SINCallNotificationResult is used to indicate the result of -[SINClient relayRemotePushNotificationPayload:]
- * when the Sinch-specific payload in the notification represents an incoming
+ * SINCallNotificationResult is used to indicate the result of calling the methods
+ * -[SINClient relayLocalNotification:] and
+ * -[SINClient relayRemotePushNotificationPayload:]
+ * , when the Sinch-specific payload in the notification represents an incoming
  * call.
  *
  * One example of a scenario where SINCallNotificationResult is when a user
@@ -33,6 +35,11 @@
  * Hint that indicates if video is offered in the call.
  */
 @property (nonatomic, readonly, getter=isVideoOffered) BOOL videoOffered;
+
+/**
+ * If isCallCanceled is true, then the notification indicates the remote party canceled the call.
+ */
+@property (nonatomic, readonly, getter=isCallCanceled) BOOL callCanceled;
 
 /**
  * Return headers set by the caller when initiating the call.

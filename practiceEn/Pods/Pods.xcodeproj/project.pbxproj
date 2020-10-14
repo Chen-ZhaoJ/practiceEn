@@ -250,6 +250,39 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		12DC32ABD5205A41B8CDA4F61DE293FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D53DC9A31543CB5E0E11EA3310242A76 /* SinchRTC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B2BC3C2D1A54F6A6A33E5FF44525AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5D0D000AF75B9A82E5586CB882F55A3 /* SinchRTC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		4EBC741460BC710C963D24CAAB3BC925 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -314,24 +347,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
-		};
-		611E56C3DDF7A72FFE98651B55620966 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D53DC9A31543CB5E0E11EA3310242A76 /* SinchRTC.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 		846071067AB472C6958D9632C587D33E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -431,23 +446,6 @@
 			};
 			name = Release;
 		};
-		B0FC35CB798F5708F511AA6BB271CCBC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5D0D000AF75B9A82E5586CB882F55A3 /* SinchRTC.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		C550A3D03040CAC1487E938C4ACEEDB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A8ACF4FB8C6F895649B38E854E034E19 /* Pods-practiceEn.release.xcconfig */;
@@ -492,8 +490,8 @@
 		228EA738DEF6DCB919E8E093F4B7A656 /* Build configuration list for PBXAggregateTarget "SinchRTC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B0FC35CB798F5708F511AA6BB271CCBC /* Debug */,
-				611E56C3DDF7A72FFE98651B55620966 /* Release */,
+				3B2BC3C2D1A54F6A6A33E5FF44525AF8 /* Debug */,
+				12DC32ABD5205A41B8CDA4F61DE293FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

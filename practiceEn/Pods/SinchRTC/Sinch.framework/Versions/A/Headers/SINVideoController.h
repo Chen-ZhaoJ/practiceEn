@@ -56,9 +56,9 @@
  *
  * @param callback The callback object that will receive frames.
  *
- * @see SINRemoteVideoFrameCallback
+ * @see SINVideoFrameCallback
  */
-- (void)setRemoteVideoFrameCallback:(id<SINRemoteVideoFrameCallback>)callback;
+- (void)setVideoFrameCallback:(id<SINVideoFrameCallback>)callback;
 
 /**
  * Set a callback for listening to video frames captured from the local camera.
@@ -80,6 +80,6 @@
 SIN_EXPORT AVCaptureDevicePosition SINToggleCaptureDevicePosition(AVCaptureDevicePosition position);
 
 /**
- * Convert a CVPixelBufferRef to an UIImage.
+ * Convert a SINVideoFrame to an UIImage.
  */
-SIN_EXPORT UIImage *SINUIImageFromPixelBuffer(CVPixelBufferRef pixelBuffer);
+SIN_EXPORT UIImage* SINUIImageFromVideoFrame(id<SINVideoFrame> videoFrame);

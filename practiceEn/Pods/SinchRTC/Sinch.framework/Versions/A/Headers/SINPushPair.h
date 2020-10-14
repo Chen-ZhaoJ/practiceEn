@@ -18,11 +18,13 @@
 @property (nonatomic, retain) NSData* pushData;
 
 /**
- * The push payload contains call information encoded by the Sinch SDK.
- * The payload should considered opaque to the application developer, and should be delivered to the callee
- * via appropriate push service, e.g. Apple Push Notification Service (APNS) or Google Cloud Messaging (GCM).
- * Once received on the destination device, it should be passed to the Sinch SDK via the method
- * -[SINClient relayRemotePushNotificationPayload:].
+ * The push payload contains call/instant-message information encoded by
+ * the Sinch SDK. The payload should considered opaque to the
+ * application developer, and should be delivered to the callee/ recipient of
+ * an instant-message via appropriate push service, e.g. Apple Push Notification
+ * Service (APNS) or Google Cloud Messaging (GCM). Once received on the
+ * destination device, it should be passed to the
+ * Sinch via the method -[SINClient relayRemotePushNotificationPayload:].
  */
 @property (nonatomic, retain) NSString* pushPayload;
 

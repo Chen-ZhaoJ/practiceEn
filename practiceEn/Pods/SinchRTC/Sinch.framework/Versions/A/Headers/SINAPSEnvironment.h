@@ -3,7 +3,6 @@
  *
  * See LICENSE file for license terms and information.
  */
-#import <Foundation/Foundation.h>
 
 #ifndef SIN_APS_ENVIRONMENT_H
 #define SIN_APS_ENVIRONMENT_H

@@ -11,12 +11,16 @@
 @protocol SINCallClient;
 @protocol SINCall;
 
+@protocol SINMessageClient;
+
 @protocol SINManagedPush;
 @protocol SINNotificationResult;
+@class SINLocalNotification;
+@class UILocalNotification;
 @class SINPushHelper;
 
 @protocol SINAudioController;
 @protocol SINVideoController;
-@protocol SINRemoteVideoFrameCallback;
+@protocol SINVideoFrameCallback;
 @protocol SINVideoFrame;
 @protocol SINLocalVideoFrameCallback;

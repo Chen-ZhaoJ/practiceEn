@@ -15,24 +15,29 @@
 #import "SINCall.h"
 #import "SINCallDetails.h"
 
+#import "SINMessageClient.h"
+#import "SINMessage.h"
+#import "SINOutgoingMessage.h"
+#import "SINMessageDeliveryInfo.h"
+#import "SINMessageFailureInfo.h"
+
 #import "SINAudioController.h"
 
 #import "SINVideoController.h"
-#import "SINUIView+Fullscreen.h"
-#import "SINVideoFrame.h"
-#import "SINRemoteVideoFrameCallback.h"
-#import "SINLocalVideoFrameCallback.h"
 
 #import "SINPushPair.h"
 #import "SINManagedPush.h"
 #import "SINAPSEnvironment.h"
 #import "SINPushHelper.h"
 
+#import "SINLocalNotification.h"
+#import "SINUILocalNotification+Sinch.h"
+
 #import "SINNotificationResult.h"
 #import "SINCallNotificationResult.h"
+#import "SINMessageNotificationResult.h"
 
 #import "SINLogSeverity.h"
-#import "SINLogCallback.h"
 #import "SINError.h"
 
 /**
@@ -189,20 +194,6 @@ SIN_EXPORT
  * @see SINAPSEnvironment
  */
 + (id<SINManagedPush>)managedPushWithAPSEnvironment:(SINAPSEnvironment)apsEnvironment;
-
-/**
- * Set a log callback block.
- *
- * The Sinch SDK will emit all it's logging by invoking the specified block.
- *
- * Caution: Only log messages with severity level `SINLogSeverityWarn`
- * or higher to the console in release builds, to avoid flooding the
- * device console with debugging messages.
- *
- * @param block log callback block. IMPORTANT: The block may be invoked on any thread / GCD queue.
- *
- */
-+ (void)setLogCallback:(SINLogCallback)block;
 
 /**
  * Returns the Sinch SDK version.

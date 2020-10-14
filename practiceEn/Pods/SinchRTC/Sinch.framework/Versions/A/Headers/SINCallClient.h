@@ -5,9 +5,10 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVAudioSession.h>
 #import <Sinch/SINExport.h>
 
+@class SINLocalNotification;
 @class CXProvider;
 @protocol SINCall;
 @protocol SINCallClientDelegate;
@@ -37,12 +38,11 @@
  *
  */
 
-SIN_EXPORT SIN_EXTERN NSString *const SINIncomingCallNotification;      // userInfo contains SINCall
+SIN_EXPORT SIN_EXTERN NSString *const SINIncomingCallNotification;  // userInfo contains SINCall
 SIN_EXPORT SIN_EXTERN NSString *const SINCallDidProgressNotification;   // userInfo contains SINCall
 SIN_EXPORT SIN_EXTERN NSString *const SINCallDidEstablishNotification;  // userInfo contains SINCall
 SIN_EXPORT SIN_EXTERN NSString *const SINCallDidEndNotification;        // userInfo contains SINCall
-SIN_EXPORT SIN_EXTERN NSString *const SINCallKey;                       // SINCallKey is used for SINCall in userInfo;
-SIN_EXPORT SIN_EXTERN NSString *const SINCallIdKey;  // SINCallIdKey is used for a call id in userInfo;
+SIN_EXPORT SIN_EXTERN NSString *const SINCallKey;                   // SINCallKey is used for SINCall in userInfo;
 
 @protocol SINCallClient <NSObject>
 
@@ -251,22 +251,13 @@ SIN_EXPORT SIN_EXTERN NSString *const SINCallIdKey;  // SINCallIdKey is used for
 /**
  * This API is introduced to support CallKit integration. Invoke this method to notify the Sinch SDK that the App has
  * received the didActivateAudioSession callback from CXProviderDelegate. When CallKit is integrated in the App and an
- * incoming call is received in the background, this method has to be invoked for the Sinch SDK to start the media for
+ * incoming call is received in the background, this method has to be invoked for the Sinch SDK to start the media for 
  * the call.
  *
  * @param audioSession The audioSession from the didActivateAudioSession callback of CXProviderDelegate.
  */
 - (void)provider:(CXProvider *)provider didActivateAudioSession:(AVAudioSession *)audioSession;
 
-/**
- * This API is introduced to support CallKit integration. Invoke this method to notify the Sinch SDK that the App has
- * received the didDeactivateAudioSession callback from CXProviderDelegate. When CallKit is integrated in the App, this
- * method has to be invoked to pass the didDeactivateAudioSession event from CallKit to the Sinch SDK for correct
- * audio session management.
- *
- * @param audioSession The audioSession from the didActivateAudioSession callback of CXProviderDelegate.
- */
-- (void)provider:(CXProvider *)provider didDeactivateAudioSession:(AVAudioSession *)audioSession;
 @end
 
 @protocol SINCallClientDelegate <NSObject>
@@ -309,5 +300,40 @@ SIN_EXPORT SIN_EXTERN NSString *const SINCallIdKey;  // SINCallIdKey is used for
  * @see SINCallClient, SINCall, SINCallDelegate
  */
 - (void)client:(id<SINCallClient>)client didReceiveIncomingCall:(id<SINCall>)call;
+
+/**
+ * Method for providing presentation related data for a local notification used
+ * to notify the application user of an incoming call.
+ *
+ * The return value will be used by SINCallClient to schedule a
+ * 'Local Push Notification', i.e. a UILocalNotification.
+ * That UILocalNotification, when triggered and taken action upon by the user,
+ * is supposed to be used in conjunction with
+ * -[SINClient relayLocalNotification:].
+ *
+ * This method is declared as optional, but it is required to be implemented
+ * if support for receiving calls via VoIP Push Notifications (using PushKit and
+ * optionally SINManagedPush) is desired.
+ *
+ * Hanging up an incoming call while being in the background is a valid operation.
+ * This can be useful to dismiss an incoming call while the user is busy, e.g.
+ * in a regular phone call. This will effectively prevent the SDK from invoking
+ * the -[SINCallClientDelegate client:didReceiveIncomingCall:] method when the app returns to
+ * foreground.
+ * Invoking -[SINCall answer] is pended until the app returns to the foreground.
+ *
+ * @param client The client requesting a local notification
+ *
+ * @param call A SINCall object representing the incoming call.
+ *
+ * @return SINLocalNotification The delegate is responsible for composing a
+ *                              SINLocalNotification which can be used to
+ *                              present an incoming call.
+ *
+ * @see SINLocalNotification
+ * @see SINCallClient
+ * @see SINCall
+ */
+- (SINLocalNotification *)client:(id<SINCallClient>)client localNotificationForIncomingCall:(id<SINCall>)call;
 
 @end

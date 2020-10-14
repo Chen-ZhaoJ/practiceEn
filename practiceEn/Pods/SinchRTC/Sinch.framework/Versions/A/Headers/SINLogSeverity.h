@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2015 Sinch AB. All rights reserved.
  *
@@ -7,8 +6,6 @@
 
 #ifndef SIN_LOG_SEVERITY_H
 #define SIN_LOG_SEVERITY_H
-
-#import <Foundation/Foundation.h>
 
 #ifndef SIN_LOG_SEVERITY_
 #define SIN_LOG_SEVERITY_

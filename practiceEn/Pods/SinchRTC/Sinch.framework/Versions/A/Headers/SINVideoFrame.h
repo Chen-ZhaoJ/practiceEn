@@ -4,7 +4,6 @@
  * See LICENSE file for license terms and information.
  */
 
-#import <Foundation/Foundation.h>
 #import <CoreVideo/CVPixelBuffer.h>
 
 /**
