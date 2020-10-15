@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,7 @@
 		90E7ABD32536DF9600717F26 /* SINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E7ABD22536DF9600717F26 /* SINViewController.swift */; };
 		90E7ABD52536E2DE00717F26 /* CallTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E7ABD42536E2DE00717F26 /* CallTableViewController.swift */; };
 		90E7ABD72536E9EC00717F26 /* SINClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E7ABD62536E9EC00717F26 /* SINClientManager.swift */; };
+		923259C62538996F0067EE29 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 923259C52538996F0067EE29 /* GoogleService-Info.plist */; };
 		B0154BDF252C5C98009E5E6B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0154BDE252C5C98009E5E6B /* ResetPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		90E7ABD22536DF9600717F26 /* SINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SINViewController.swift; sourceTree = "<group>"; };
 		90E7ABD42536E2DE00717F26 /* CallTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallTableViewController.swift; sourceTree = "<group>"; };
 		90E7ABD62536E9EC00717F26 /* SINClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SINClientManager.swift; sourceTree = "<group>"; };
+		923259C52538996F0067EE29 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96C9C340C4DFB78941D7AD0E /* Pods-practiceEn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-practiceEn.release.xcconfig"; path = "Target Support Files/Pods-practiceEn/Pods-practiceEn.release.xcconfig"; sourceTree = "<group>"; };
 		B0154BDE252C5C98009E5E6B /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		FF5272D44D9D2E089F97180B /* Pods_practiceEn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_practiceEn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 				903F42C1252335510024631C /* Assets.xcassets */,
 				903F42C3252335510024631C /* LaunchScreen.storyboard */,
 				903F42C6252335510024631C /* Info.plist */,
+				923259C52538996F0067EE29 /* GoogleService-Info.plist */,
 				903DB9B2252725D8008712E6 /* practiceEn-Bridging-Header.h */,
 			);
 			path = practiceEn;
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				903F42C5252335510024631C /* LaunchScreen.storyboard in Resources */,
+				923259C62538996F0067EE29 /* GoogleService-Info.plist in Resources */,
 				903F42DF25233B660024631C /* Thirdpage.storyboard in Resources */,
 				903F42DD25233B460024631C /* Secondpage.storyboard in Resources */,
 				903F42C2252335510024631C /* Assets.xcassets in Resources */,
