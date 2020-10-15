@@ -13,7 +13,7 @@
         <!--Home-->
         <scene sceneID="aPM-BI-fFh">
             <objects>
-                <viewController storyboardIdentifier="FirstpageViewController" id="GEb-HJ-htF" customClass="FirstpageViewController" customModule="practiceEn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GEb-HJ-htF" customClass="FirstpageViewController" customModule="practiceEn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhL-br-TSy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,12 +191,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ke-hU-YLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2575" y="830"/>
+            <point key="canvasLocation" x="2555" y="830"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RtK-A9-4gX">
             <objects>
-                <viewController id="t8W-UC-icu" customClass="SINViewController" customModule="practiceEn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="t8W-UC-icu" customClass="SINViewController" customModule="practiceEn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zl1-zq-XKk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
