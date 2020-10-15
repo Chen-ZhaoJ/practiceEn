@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>38243872428-sui4ma5ie89nriu3kdcanqr7r8gco8oe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.38243872428-sui4ma5ie89nriu3kdcanqr7r8gco8oe</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAYR131NaJYKJbKv_wf49W85E1xXfDD_4g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>38243872428</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Lily.practiceEn</string>
+	<key>PROJECT_ID</key>
+	<string>practice-2955e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>practice-2955e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:38243872428:ios:e0ec935bc12a88b23b7909</string>
+	<key>DATABASE_URL</key>
+	<string>https://practice-2955e.firebaseio.com</string>
+</dict>
+</plist>
