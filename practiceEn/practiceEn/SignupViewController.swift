@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAnalytics
+
 
 class SignupViewController: UIViewController {
     
