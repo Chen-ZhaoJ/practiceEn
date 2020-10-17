@@ -11,17 +11,20 @@ import UIKit
 
 
 
-class HomeTable: UITableView,UITableViewDelegate,UITableViewDataSource {
+class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
 
     
+    @IBOutlet weak var tableView: UITableView!
     
-      override func awakeFromNib() {
-        self.delegate = self
-        self.dataSource = self
-        
+   
+      
+    override func viewDidLoad() {
+      
     }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -38,6 +41,7 @@ class HomeTable: UITableView,UITableViewDelegate,UITableViewDataSource {
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)as! CategoryCell
+            
             
           
             return cell

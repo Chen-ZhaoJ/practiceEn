@@ -15,11 +15,7 @@ class LevelOneViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-       let swipeRight = UISwipeGestureRecognizer(
-         target:self,
-         action:#selector(LevelOneViewController.swipe))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
+       
 
     }
     @objc func swipe(recognizer:UISwipeGestureRecognizer) {

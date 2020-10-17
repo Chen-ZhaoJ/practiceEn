@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C89FC05228B9094B474F70E /* Pods_practiceEn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5272D44D9D2E089F97180B /* Pods_practiceEn.framework */; };
 		903DB97D25265315008712E6 /* HomeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB97C25265315008712E6 /* HomeTable.swift */; };
-		903DB97F2526538F008712E6 /* LevelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB97E2526538F008712E6 /* LevelCollection.swift */; };
 		903DB98125265421008712E6 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB98025265421008712E6 /* FeatureCell.swift */; };
 		903DB98325265445008712E6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB98225265445008712E6 /* CategoryCell.swift */; };
 		903DB987252654B6008712E6 /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB986252654B6008712E6 /* LevelCell.swift */; };
@@ -22,7 +21,6 @@
 		903F42C2252335510024631C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903F42C1252335510024631C /* Assets.xcassets */; };
 		903F42C5252335510024631C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903F42C3252335510024631C /* LaunchScreen.storyboard */; };
 		903F42CF252339030024631C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F42CE252339030024631C /* SignupViewController.swift */; };
-		903F42D1252339820024631C /* FirstpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F42D0252339820024631C /* FirstpageViewController.swift */; };
 		903F42D525233A150024631C /* ThirdpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F42D425233A150024631C /* ThirdpageViewController.swift */; };
 		903F42D825233AF90024631C /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903F42D625233AF90024631C /* Signup.storyboard */; };
 		903F42DA25233B280024631C /* Firstpage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903F42D925233B280024631C /* Firstpage.storyboard */; };
@@ -38,7 +36,6 @@
 /* Begin PBXFileReference section */
 		76CFDABC5E586DC83B9CDB11 /* Pods-practiceEn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-practiceEn.debug.xcconfig"; path = "Target Support Files/Pods-practiceEn/Pods-practiceEn.debug.xcconfig"; sourceTree = "<group>"; };
 		903DB97C25265315008712E6 /* HomeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTable.swift; sourceTree = "<group>"; };
-		903DB97E2526538F008712E6 /* LevelCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCollection.swift; sourceTree = "<group>"; };
 		903DB98025265421008712E6 /* FeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCell.swift; sourceTree = "<group>"; };
 		903DB98225265445008712E6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		903DB986252654B6008712E6 /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
@@ -54,7 +51,6 @@
 		903F42C4252335510024631C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		903F42C6252335510024631C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		903F42CE252339030024631C /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		903F42D0252339820024631C /* FirstpageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstpageViewController.swift; sourceTree = "<group>"; };
 		903F42D425233A150024631C /* ThirdpageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdpageViewController.swift; sourceTree = "<group>"; };
 		903F42D725233AF90024631C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = practiceEn/Base.lproj/Signup.storyboard; sourceTree = "<group>"; };
 		903F42D925233B280024631C /* Firstpage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Firstpage.storyboard; sourceTree = "<group>"; };
@@ -87,7 +83,6 @@
 				903DB97C25265315008712E6 /* HomeTable.swift */,
 				903DB9BC25286F92008712E6 /* LevelOneViewController.swift */,
 				903DB9BE252B301B008712E6 /* LevelTwoViewController.swift */,
-				903DB97E2526538F008712E6 /* LevelCollection.swift */,
 				903DB98025265421008712E6 /* FeatureCell.swift */,
 				903DB98225265445008712E6 /* CategoryCell.swift */,
 				903DB986252654B6008712E6 /* LevelCell.swift */,
@@ -130,7 +125,6 @@
 				903F42BA2523354D0024631C /* SceneDelegate.swift */,
 				903F42BC2523354D0024631C /* ViewController.swift */,
 				903F42CE252339030024631C /* SignupViewController.swift */,
-				903F42D0252339820024631C /* FirstpageViewController.swift */,
 				903F42D425233A150024631C /* ThirdpageViewController.swift */,
 				903F42C1252335510024631C /* Assets.xcassets */,
 				903F42C3252335510024631C /* LaunchScreen.storyboard */,
@@ -279,13 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903F42D1252339820024631C /* FirstpageViewController.swift in Sources */,
 				903F42BD2523354D0024631C /* ViewController.swift in Sources */,
 				903DB98125265421008712E6 /* FeatureCell.swift in Sources */,
 				903DB987252654B6008712E6 /* LevelCell.swift in Sources */,
 				903DB97D25265315008712E6 /* HomeTable.swift in Sources */,
 				903F42D525233A150024631C /* ThirdpageViewController.swift in Sources */,
-				903DB97F2526538F008712E6 /* LevelCollection.swift in Sources */,
 				90E7ABD72536E9EC00717F26 /* SINClientManager.swift in Sources */,
 				903DB9BF252B301B008712E6 /* LevelTwoViewController.swift in Sources */,
 				90E7ABD52536E2DE00717F26 /* CallTableViewController.swift in Sources */,
