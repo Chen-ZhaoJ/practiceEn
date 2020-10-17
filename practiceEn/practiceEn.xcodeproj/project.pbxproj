@@ -124,7 +124,6 @@
 		903F42B72523354D0024631C /* practiceEn */ = {
 			isa = PBXGroup;
 			children = (
-				92DEA55A25389A5000E9D539 /* GoogleService-Info.plist */,
 				903F42BE2523354D0024631C /* Main.storyboard */,
 				B0154BDE252C5C98009E5E6B /* ResetPasswordViewController.swift */,
 				903F42B82523354D0024631C /* AppDelegate.swift */,
@@ -136,6 +135,7 @@
 				903F42C1252335510024631C /* Assets.xcassets */,
 				903F42C3252335510024631C /* LaunchScreen.storyboard */,
 				903F42C6252335510024631C /* Info.plist */,
+				92DEA55A25389A5000E9D539 /* GoogleService-Info.plist */,
 				903DB9B2252725D8008712E6 /* practiceEn-Bridging-Header.h */,
 			);
 			path = practiceEn;

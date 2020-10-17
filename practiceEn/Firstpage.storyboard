@@ -13,7 +13,7 @@
         <!--Home-->
         <scene sceneID="aPM-BI-fFh">
             <objects>
-                <viewController id="GEb-HJ-htF" customClass="FirstpageViewController" customModule="practiceEn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstpageViewController" id="GEb-HJ-htF" customClass="FirstpageViewController" customModule="practiceEn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhL-br-TSy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

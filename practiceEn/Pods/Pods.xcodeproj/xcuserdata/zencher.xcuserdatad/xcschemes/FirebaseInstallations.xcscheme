@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "47A89A1ED96443E905F133F502CF4348"
-               BuildableName = "SinchRTC"
-               BlueprintName = "SinchRTC"
+               BlueprintIdentifier = "87803597EB3F20FC46472B85392EC4FD"
+               BuildableName = "FirebaseInstallations.framework"
+               BlueprintName = "FirebaseInstallations"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

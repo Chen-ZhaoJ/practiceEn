@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import FirebaseAnalytics
+import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
