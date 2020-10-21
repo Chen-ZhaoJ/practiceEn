@@ -11,7 +11,13 @@ import UIKit
 
 
 
-class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,YourCellDelegate {
+    
+    func didPressCell(sender: Any) {
+        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "SINViewController") as! SINViewController
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     
     
 
@@ -21,7 +27,8 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource {
    
       
     override func viewDidLoad() {
-      
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     
@@ -41,9 +48,7 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource {
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)as! CategoryCell
-            
-            
-          
+            cell.delegate = self
             return cell
         }
     }
@@ -52,6 +57,7 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
 
     }
+    
 
     /*
     // Only override draw() if you perform custom drawing.

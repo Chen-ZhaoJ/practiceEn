@@ -16,5 +16,7 @@ class LevelCell: UICollectionViewCell {
     @IBOutlet weak var levelImageView: UIImageView!
     
     
+    
+    
   
 }

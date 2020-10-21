@@ -8,11 +8,13 @@
 
 import UIKit
 
-
+protocol YourCellDelegate: NSObjectProtocol{
+    func didPressCell(sender: Any)
+}
 
 class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    
+    var delegate:YourCellDelegate!
     
     var levelImages:[UIImage] = [
         UIImage(named: "level1")!,
@@ -32,6 +34,7 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LevelCell", for: indexPath) as! LevelCell
         cell.levelImageView.image = levelImages[indexPath.item]
         
+       
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -49,7 +52,8 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         if indexPath.item == 0 {
             print("1")
             
-            
+            delegate.didPressCell(sender: indexPath.item)
+
         }else if indexPath.item == 1 {
             print("2")
         }else if indexPath.item == 2 {
@@ -57,6 +61,7 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         }
         
         
+       
        
        
         
@@ -68,7 +73,10 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         cell?.layer.borderWidth = 0.5
     }
     
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
     
 
     override func awakeFromNib() {
