@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAnalytics
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
