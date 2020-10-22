@@ -9,7 +9,11 @@
 import UIKit
 
 protocol YourCellDelegate: NSObjectProtocol{
-    func didPressCell(sender: Any)
+    func didPressCellone(sender: Any)
+    func didPressCelltwo(sender: Any)
+    func didPressCellthree(sender: Any)
+    
+    
 }
 
 class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -52,9 +56,10 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         if indexPath.item == 0 {
             print("1")
             
-            delegate.didPressCell(sender: indexPath.item)
+            delegate.didPressCellone(sender: indexPath.item)
 
         }else if indexPath.item == 1 {
+            delegate.didPressCelltwo(sender: indexPath.item)
             print("2")
         }else if indexPath.item == 2 {
             print("3")

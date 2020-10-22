@@ -13,9 +13,24 @@ import UIKit
 
 class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,YourCellDelegate {
     
-    func didPressCell(sender: Any) {
+    func didPressCelltwo(sender: Any) {
+        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "LevelOneViewController") as! LevelOneViewController
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    func didPressCellthree(sender: Any) {
+        
+        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "LevelOneViewController") as! LevelOneViewController
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+    
+    func didPressCellone(sender: Any) {
         let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "SINViewController") as! SINViewController
         self.navigationController?.pushViewController(controller, animated: true)
+        
     }
     
     

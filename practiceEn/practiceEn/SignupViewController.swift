@@ -40,7 +40,7 @@ class SignupViewController: UIViewController {
                     //        ref.setValue(["Label": textField.text])
                     //        加到child 節點下面
                     //        ref.child("Child").setValue(["Label": textField.text])
-                    self.ref.childByAutoId().setValue(["Label": self.username.text])
+//                    self.ref.childByAutoId().setValue(["Label": self.username.text])
                     self.aaa()
                 } else {
                     //建立失敗，跳出警告
@@ -56,7 +56,7 @@ class SignupViewController: UIViewController {
     func aaa(){
         var refHandle = ref.observe(DataEventType.value, with: {(snapshot) in
             let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-            self.username.text = postDict["Label"] as? String
+//            self.username.text = postDict["Label"] as? String
             print(postDict["Label"])
         })
         // Do any additional setup after loading the view.

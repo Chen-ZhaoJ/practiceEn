@@ -334,7 +334,7 @@
         <!--中級-->
         <scene sceneID="mk1-Oe-eo1">
             <objects>
-                <viewController storyboardIdentifier="B" id="kSc-uK-hBu" customClass="LevelTwoViewController" customModule="practiceEn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LevelTwoViewController" id="kSc-uK-hBu" customClass="LevelTwoViewController" customModule="practiceEn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fzc-r5-u7p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
