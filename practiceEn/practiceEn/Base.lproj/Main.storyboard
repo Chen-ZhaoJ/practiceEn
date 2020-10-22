@@ -26,6 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="登入"/>
                                 <connections>
+                                    <action selector="LoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oMJ-qN-b7l"/>
                                     <segue destination="WcT-vL-njR" kind="show" id="0dX-Pq-m5I"/>
                                 </connections>
                             </button>
@@ -56,6 +57,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z3W-OV-idM"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="uRo-DX-dbz" id="yuG-Ib-mCw"/>
+                        <outlet property="passwordTextField" destination="Mn1-03-01f" id="EMS-Tr-8hI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
