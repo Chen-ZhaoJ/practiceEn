@@ -5,7 +5,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVAudioSession.h>
 #import <Sinch/SINExport.h>
 
 @class SINLocalNotification;
