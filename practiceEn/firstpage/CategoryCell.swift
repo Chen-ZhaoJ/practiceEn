@@ -95,11 +95,11 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
 
         arrayofIDs = ["A","B","C"]
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 15, left: 50, bottom: 0, right: 50)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 40, bottom: 0, right: 40)
         //垂直行间距
-        layout.minimumLineSpacing = 30
+        layout.minimumLineSpacing = 20
         //水平间隔
-        layout.minimumInteritemSpacing = 5.0
+        layout.minimumInteritemSpacing = 0
            
         layout.itemSize.height = self.frame.height/4.5
         layout.itemSize.width = self.frame.height/4.5

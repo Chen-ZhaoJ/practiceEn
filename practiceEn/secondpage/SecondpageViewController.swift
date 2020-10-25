@@ -52,12 +52,19 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.tableFooterView = UIView()
-        
+        tableview.backgroundColor = UIColor.systemGray6
         
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func signOut(_ sender: Any) {
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
+        let controller = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController") as! ViewController
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
 
     /*

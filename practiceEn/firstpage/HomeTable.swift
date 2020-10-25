@@ -44,6 +44,7 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = UIColor.systemGray6
     }
     override func viewWillAppear(_ animated: Bool) {
       
