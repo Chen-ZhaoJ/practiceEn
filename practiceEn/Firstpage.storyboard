@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f9V-s6-eck">
-                                <rect key="frame" x="0.0" y="31" width="414" height="782"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f9V-s6-eck">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureCell" rowHeight="161" id="tbj-T5-jXj" customClass="FeatureCell" customModule="practiceEn" customModuleProvider="target">
@@ -140,8 +139,8 @@
                                                             <rect key="frame" x="20" y="20" width="200" height="50"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcU-ck-Taw">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="126" height="27"/>
-                                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="27"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116.5" height="27"/>
+                                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -191,6 +190,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1P4-B3-cOO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f9V-s6-eck" firstAttribute="trailing" secondItem="1P4-B3-cOO" secondAttribute="trailing" id="8Og-AW-qxK"/>
+                            <constraint firstItem="f9V-s6-eck" firstAttribute="bottom" secondItem="1P4-B3-cOO" secondAttribute="bottom" id="Dk8-hk-dGx"/>
+                            <constraint firstItem="f9V-s6-eck" firstAttribute="leading" secondItem="1P4-B3-cOO" secondAttribute="leading" id="LIM-EI-dJO"/>
+                            <constraint firstItem="f9V-s6-eck" firstAttribute="top" secondItem="yhL-br-TSy" secondAttribute="top" id="alt-6K-eBO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="mUr-MW-44I"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

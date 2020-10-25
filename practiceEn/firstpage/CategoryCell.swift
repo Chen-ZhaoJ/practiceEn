@@ -37,7 +37,7 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LevelCell", for: indexPath) as! LevelCell
         cell.levelImageView.image = levelImages[indexPath.item]
-        
+        cell.layer.cornerRadius = 10
        
         return cell
     }
@@ -74,9 +74,12 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        cell?.layer.borderColor = UIColor.lightGray.cgColor
+        cell?.layer.borderColor = UIColor.white.cgColor
         cell?.layer.borderWidth = 0.5
+       
+        
     }
+    
     
     
     
@@ -92,14 +95,15 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
 
         arrayofIDs = ["A","B","C"]
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 15, left: 30, bottom: 0, right: 70)
+        layout.sectionInset = UIEdgeInsets(top: 15, left: 50, bottom: 0, right: 50)
         //垂直行间距
-        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 30
         //水平间隔
         layout.minimumInteritemSpacing = 5.0
            
-        layout.itemSize.height = self.frame.height/4
-        layout.itemSize.width = self.frame.height/4
+        layout.itemSize.height = self.frame.height/4.5
+        layout.itemSize.width = self.frame.height/4.5
+        
 
         collectionView.collectionViewLayout = layout
     }

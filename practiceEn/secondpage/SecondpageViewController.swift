@@ -11,12 +11,13 @@ import UIKit
 class SecondpageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableview: UITableView!
+    
     var name = ["ImageData","Name","Email","Password","Gender","Learning purpose"]
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,7 +35,19 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         }
        
     }
-   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        if indexPath.row == 1{
+            performSegue(withIdentifier: "name", sender: Any.self)
+        }else if indexPath.row == 2{
+            performSegue(withIdentifier: "email", sender: Any.self)
+        }else if indexPath.row == 3{
+            performSegue(withIdentifier: "password", sender: Any.self)
+        }else if indexPath.row == 5{
+            performSegue(withIdentifier: "glob", sender: Any.self)
+        }
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
