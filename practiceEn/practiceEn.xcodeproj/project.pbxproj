@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0C89FC05228B9094B474F70E /* Pods_practiceEn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5272D44D9D2E089F97180B /* Pods_practiceEn.framework */; };
+		2AF96D0225454C28008A8B33 /* SecondpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF96D0125454C28008A8B33 /* SecondpageViewController.swift */; };
+		2AF96D1A254565C7008A8B33 /* Secondpage+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF96D19254565C7008A8B33 /* Secondpage+UI.swift */; };
+		2AF96D1E254576F4008A8B33 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF96D1D254576F4008A8B33 /* ImageCell.swift */; };
+		2AF96D2125457718008A8B33 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF96D2025457718008A8B33 /* DataCell.swift */; };
 		903DB97D25265315008712E6 /* HomeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB97C25265315008712E6 /* HomeTable.swift */; };
 		903DB98125265421008712E6 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB98025265421008712E6 /* FeatureCell.swift */; };
 		903DB98325265445008712E6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DB98225265445008712E6 /* CategoryCell.swift */; };
@@ -34,6 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AF96D0125454C28008A8B33 /* SecondpageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondpageViewController.swift; sourceTree = "<group>"; };
+		2AF96D19254565C7008A8B33 /* Secondpage+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secondpage+UI.swift"; sourceTree = "<group>"; };
+		2AF96D1D254576F4008A8B33 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		2AF96D2025457718008A8B33 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
 		76CFDABC5E586DC83B9CDB11 /* Pods-practiceEn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-practiceEn.debug.xcconfig"; path = "Target Support Files/Pods-practiceEn/Pods-practiceEn.debug.xcconfig"; sourceTree = "<group>"; };
 		903DB97C25265315008712E6 /* HomeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTable.swift; sourceTree = "<group>"; };
 		903DB98025265421008712E6 /* FeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCell.swift; sourceTree = "<group>"; };
@@ -77,6 +85,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AF96D0025454B1C008A8B33 /* secondpage */ = {
+			isa = PBXGroup;
+			children = (
+				2AF96D0125454C28008A8B33 /* SecondpageViewController.swift */,
+				2AF96D19254565C7008A8B33 /* Secondpage+UI.swift */,
+				2AF96D1D254576F4008A8B33 /* ImageCell.swift */,
+				2AF96D2025457718008A8B33 /* DataCell.swift */,
+			);
+			path = secondpage;
+			sourceTree = "<group>";
+		};
 		903DB9B625285974008712E6 /* firstpage */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +119,7 @@
 				903F42DE25233B660024631C /* Thirdpage.storyboard */,
 				903F42DB25233B460024631C /* Secondpage.storyboard */,
 				903F42D925233B280024631C /* Firstpage.storyboard */,
+				2AF96D0025454B1C008A8B33 /* secondpage */,
 				903DB9B625285974008712E6 /* firstpage */,
 				903F42B72523354D0024631C /* practiceEn */,
 				903F42B62523354D0024631C /* Products */,
@@ -274,20 +294,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				903F42BD2523354D0024631C /* ViewController.swift in Sources */,
+				2AF96D0225454C28008A8B33 /* SecondpageViewController.swift in Sources */,
 				903DB98125265421008712E6 /* FeatureCell.swift in Sources */,
 				903DB987252654B6008712E6 /* LevelCell.swift in Sources */,
 				903DB97D25265315008712E6 /* HomeTable.swift in Sources */,
+				2AF96D1A254565C7008A8B33 /* Secondpage+UI.swift in Sources */,
 				903F42D525233A150024631C /* ThirdpageViewController.swift in Sources */,
 				90E7ABD72536E9EC00717F26 /* SINClientManager.swift in Sources */,
 				903DB9BF252B301B008712E6 /* LevelTwoViewController.swift in Sources */,
 				90E7ABD52536E2DE00717F26 /* CallTableViewController.swift in Sources */,
 				903F42B92523354D0024631C /* AppDelegate.swift in Sources */,
+				2AF96D1E254576F4008A8B33 /* ImageCell.swift in Sources */,
 				903DB9BD25286F92008712E6 /* LevelOneViewController.swift in Sources */,
 				903F42CF252339030024631C /* SignupViewController.swift in Sources */,
 				90E7ABD32536DF9600717F26 /* SINViewController.swift in Sources */,
 				903F42BB2523354D0024631C /* SceneDelegate.swift in Sources */,
 				903DB98325265445008712E6 /* CategoryCell.swift in Sources */,
 				B0154BDF252C5C98009E5E6B /* ResetPasswordViewController.swift in Sources */,
+				2AF96D2125457718008A8B33 /* DataCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

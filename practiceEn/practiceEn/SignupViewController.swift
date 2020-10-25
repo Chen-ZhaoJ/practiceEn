@@ -12,7 +12,7 @@ import FirebaseAuth
 
 
 class SignupViewController: UIViewController {
-    lazy var ref = Database.database().reference()
+//    lazy var ref = Database.database().reference()
     
     @IBAction func createAction(_ sender: Any) {
         let u = validatePassword(passwd: emailTextField.text!)
@@ -41,7 +41,7 @@ class SignupViewController: UIViewController {
                     //        加到child 節點下面
                     //        ref.child("Child").setValue(["Label": textField.text])
 //                    self.ref.childByAutoId().setValue(["Label": self.username.text])
-                    self.aaa()
+//                    self.aaa()
                 } else {
                     //建立失敗，跳出警告
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -53,15 +53,15 @@ class SignupViewController: UIViewController {
         }
     }
     
-    func aaa(){
-        var refHandle = ref.observe(DataEventType.value, with: {(snapshot) in
-            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-//            self.username.text = postDict["Label"] as? String
-            print(postDict["Label"])
-        })
-        // Do any additional setup after loading the view.
-        
-    }
+//    func aaa(){
+//        var refHandle = ref.observe(DataEventType.value, with: {(snapshot) in
+//            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+////            self.username.text = postDict["Label"] as? String
+//            print(postDict["Label"])
+//        })
+//        // Do any additional setup after loading the view.
+//
+//    }
     func validatePassword(passwd:String)-> String{
         var r = "No"
         var isLongEnough:Bool = false

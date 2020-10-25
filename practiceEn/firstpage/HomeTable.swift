@@ -14,7 +14,7 @@ import UIKit
 class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,YourCellDelegate {
     
     func didPressCelltwo(sender: Any) {
-        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "LevelOneViewController") as! LevelOneViewController
+        let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "LevelTwoViewController") as! LevelTwoViewController
         self.navigationController?.pushViewController(controller, animated: true)
         
     }
@@ -45,7 +45,9 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+      
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

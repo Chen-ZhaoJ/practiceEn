@@ -92,7 +92,7 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
 
         arrayofIDs = ["A","B","C"]
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 30, bottom: 0, right: 70)
+        layout.sectionInset = UIEdgeInsets(top: 15, left: 30, bottom: 0, right: 70)
         //垂直行间距
         layout.minimumLineSpacing = 10
         //水平间隔
@@ -110,5 +110,6 @@ class CategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
 
         // Configure the view for the selected state
     }
+
     
 }
