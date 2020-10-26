@@ -47,6 +47,9 @@
                                 <rect key="frame" x="256" y="397" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="取消"/>
+                                <connections>
+                                    <segue destination="QsC-3v-Jci" kind="unwind" unwindAction="dismissNextWithSegue:" id="ay5-DB-EO7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Vs-lg-bTN"/>
@@ -60,6 +63,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcc-2D-hR8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="QsC-3v-Jci" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1889" y="112"/>
         </scene>

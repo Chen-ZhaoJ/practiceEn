@@ -13,7 +13,7 @@ import FirebaseAuth
 
 class SignupViewController: UIViewController {
     lazy var ref = Database.database().reference()
-    
+    let actionCodeSettings = ActionCodeSettings()
     @IBAction func createAction(_ sender: Any) {
         let u = validatePassword(passwd: emailTextField.text!)
         
@@ -25,9 +25,9 @@ class SignupViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             
         } else {
+            //Auth.auth().sendSignInLink(toEmail: emailTextField.text!, actionCodeSettings: actionCodeSettings, completion: nil)
             //建立帳號
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-                
                 if error == nil  {
                     //建立成功
                     let alertController = UIAlertController(title: "Success", message:"You have successfully signed up", preferredStyle: .alert)
