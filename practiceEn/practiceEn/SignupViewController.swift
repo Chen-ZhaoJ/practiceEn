@@ -12,7 +12,7 @@ import FirebaseAuth
 
 
 class SignupViewController: UIViewController {
-//    lazy var ref = Database.database().reference()
+    lazy var ref = Database.database().reference()
     
     @IBAction func createAction(_ sender: Any) {
         let u = validatePassword(passwd: emailTextField.text!)
@@ -33,10 +33,14 @@ class SignupViewController: UIViewController {
                     let alertController = UIAlertController(title: "Success", message:"You have successfully signed up", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: { (UIAlertAction) in
                         //成功後回前頁
+                        
+                        let controller = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController") as! ViewController
+                        self.navigationController?.pushViewController(controller, animated: true)
                         self.dismiss(animated: true, completion: nil)
                     })
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
+                    
                     //        ref.setValue(["Label": textField.text])
                     //        加到child 節點下面
                     //        ref.child("Child").setValue(["Label": textField.text])

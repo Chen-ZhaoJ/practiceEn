@@ -33,10 +33,8 @@ class ViewController: UIViewController {
                     let userDefaults = UserDefaults.standard
                     var isLogined = userDefaults.value(forKey: "isLogined") as? Bool
                     userDefaults.set(true, forKey: "isLogined")
-                    let homwvc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
-                    // dismiss把畫面砍掉 表示再出現的時候會在viewdidload一次
-                    self.dismiss(animated: true, completion: nil)
-                    //                    self.present(vc!, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "login", sender: self)
+                    
                 } else {
                     //登入失敗，彈出警告
                     let userDefaults = UserDefaults.standard

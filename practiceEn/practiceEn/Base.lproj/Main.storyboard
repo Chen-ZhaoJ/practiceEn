@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="practiceEn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="practiceEn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,6 @@
                                 <state key="normal" title="登入"/>
                                 <connections>
                                     <action selector="LoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oMJ-qN-b7l"/>
-                                    <segue destination="WcT-vL-njR" kind="show" id="0dX-Pq-m5I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jer-RV-Zfh">
@@ -62,6 +61,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="uRo-DX-dbz" id="yuG-Ib-mCw"/>
                         <outlet property="passwordTextField" destination="Mn1-03-01f" id="EMS-Tr-8hI"/>
+                        <segue destination="WcT-vL-njR" kind="presentation" identifier="login" modalPresentationStyle="fullScreen" id="TMH-Yz-Eo2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,7 +71,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Vy1-8B-fFf">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="WcT-vL-njR" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WcT-vL-njR" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5oM-tj-yRN"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wiS-0C-T6S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
