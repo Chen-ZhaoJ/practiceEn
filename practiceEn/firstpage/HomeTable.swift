@@ -61,7 +61,7 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
         let row = indexPath.row
         if row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeatureCell", for: indexPath)as! FeatureCell
-            cell.layer.backgroundColor = UIColor.lightGray.cgColor
+//            cell.layer.backgroundColor = UIColor.orange.cgColor
             cell.isUserInteractionEnabled = false
             return cell
         }else {

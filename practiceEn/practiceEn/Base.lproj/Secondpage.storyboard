@@ -126,7 +126,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Personal file" id="Nua-gR-BFx">
-                        <barButtonItem key="rightBarButtonItem" title="SignOut" style="plain" id="69v-go-qR7">
+                        <barButtonItem key="rightBarButtonItem" title="SignOut" id="69v-go-qR7">
                             <connections>
                                 <action selector="signOut:" destination="FgM-2w-NHF" id="Ogz-ZZ-mQB"/>
                             </connections>
