@@ -13,6 +13,7 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var tableview: UITableView!
     
     var name = ["ImageData","Name","Email","Password","Gender","Learning purpose"]
+    var detail = ["jpg","Lily","dorothy1290@gmail.com","1234","F","My name is Lily. I was born on August 8, 1986. I am 25 years old. There are 4 people in my family, including my father, my mother, my sister, and me. I study in Ta-an Vocational High School. My favorite subject is English. My favorite person is Kobe Bryant because of his skill in basketball. My favorite song is “Memory”. Pizza is my favorite food. Discovery is my favorite TV program. I like to watch TV and play basketball in free time. In the future, I want to be an engineer. "]
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -48,12 +49,14 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         }
         
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.tableFooterView = UIView()
         tableview.backgroundColor = UIColor.systemGray6
-        
+        tableview.estimatedRowHeight = 50.0
+        tableview.rowHeight = UITableViewAutomaticDimension
 
         // Do any additional setup after loading the view.
     }
