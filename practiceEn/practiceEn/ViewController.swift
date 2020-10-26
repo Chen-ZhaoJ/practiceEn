@@ -33,8 +33,8 @@ class ViewController: UIViewController {
                     let userDefaults = UserDefaults.standard
                     var isLogined = userDefaults.value(forKey: "isLogined") as? Bool
                     userDefaults.set(true, forKey: "isLogined")
+                    self.dismiss(animated: true, completion: nil)
                     self.performSegue(withIdentifier: "login", sender: self)
-                    
                 } else {
                     //登入失敗，彈出警告
                     let userDefaults = UserDefaults.standard

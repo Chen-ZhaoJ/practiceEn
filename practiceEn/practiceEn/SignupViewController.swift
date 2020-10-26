@@ -36,7 +36,7 @@ class SignupViewController: UIViewController {
                         
                         let controller = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController") as! ViewController
                         self.navigationController?.pushViewController(controller, animated: true)
-                        self.dismiss(animated: true, completion: nil)
+                        //self.dismiss(animated: true, completion: nil)
                     })
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)

@@ -43,6 +43,11 @@
                                     <action selector="createAction:" destination="NaE-ih-CAG" eventType="touchUpInside" id="nG1-z6-ZFe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3b-Bk-mHf">
+                                <rect key="frame" x="256" y="397" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="取消"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Vs-lg-bTN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
