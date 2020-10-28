@@ -8,19 +8,26 @@
 
 import UIKit
 
-class ImageCell: UITableViewCell {
-
+class ImageCell: UITableViewCell{
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         personalImage.layer.cornerRadius = personalImage.frame.size.width / 2
+        
     }
-
     @IBOutlet weak var personalImage: UIImageView!
-    override func setSelected(_ selected: Bool, animated: Bool) {
+   
+    
+ 
+        override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
+   
+        
+      
+
 
 }
