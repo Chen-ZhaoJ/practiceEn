@@ -14,7 +14,7 @@ class ImageCell: UITableViewCell{
         super.awakeFromNib()
         // Initialization code
         personalImage.layer.cornerRadius = personalImage.frame.size.width / 2
-        
+    
     }
     @IBOutlet weak var personalImage: UIImageView!
    

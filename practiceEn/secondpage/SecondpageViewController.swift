@@ -30,10 +30,7 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         let row = indexPath.row
         if row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath)as! ImageCell
-            
-           
-       
-
+            print(cell.personalImage.image)
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath)as! DataCell
@@ -98,18 +95,21 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
     func pickImage() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         self.present(imagePicker, animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
            
             let path = IndexPath(row:0, section: 0)
             let cell = tableview.cellForRow(at: path) as! ImageCell
                 cell.personalImage.image = pickedImage
+           
                 cell.personalImage.clipsToBounds = true
+           
             }
+        
         
             tableview.reloadData()
             picker.dismiss(animated: true, completion: nil)

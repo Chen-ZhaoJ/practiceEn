@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,YourCellDelegate {
+class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,YourCellDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     func didPressCelltwo(sender: Any) {
         let controller = UIStoryboard.init(name: "Firstpage", bundle: nil).instantiateViewController(identifier: "LevelTwoViewController") as! LevelTwoViewController
@@ -62,7 +62,8 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
         if row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeatureCell", for: indexPath)as! FeatureCell
 //            cell.layer.backgroundColor = UIColor.orange.cgColor
-            cell.isUserInteractionEnabled = false
+//            cell.isUserInteractionEnabled = false
+            cell.isUserInteractionEnabled = true
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)as! CategoryCell
@@ -71,11 +72,19 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0{
+            pickImage()
+        }
+//        tableView.deselectRow(at: indexPath, animated: true)
 
     }
-    
+    func pickImage() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        self.present(imagePicker, animated: true, completion: nil)
+    }
 
     /*
     // Only override draw() if you perform custom drawing.
