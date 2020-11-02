@@ -17,7 +17,7 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
     var name = ["ImageData","Name","Email","Gender","Learning purpose"]
     var detail = ["jpg","Lily","dorothy1290@gmail.com","F","My name is Lily. I was born on August 8, 1986. I am 25 years old. There are 4 people in my family, including my father, my mother, my sister, and me. I study in Ta-an Vocational High School. My favorite subject is English. My favorite person is Kobe Bryant because of his skill in basketball. My favorite song is “Memory”. Pizza is my favorite food. Discovery is my favorite TV program. I like to watch TV and play basketball in free time. In the future, I want to be an engineer. "]
 
-   
+    // MARK: - TableViewDataSource
    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -30,7 +30,7 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         let row = indexPath.row
         if row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath)as! ImageCell
-            print(cell.personalImage.image)
+            
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath)as! DataCell
@@ -78,8 +78,6 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
        
     }
     
-    
-    
 
 
     /*
@@ -91,28 +89,24 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         // Pass the selected object to the new view controller.
     }
     */
-   
-    func pickImage() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.allowsEditing = false
-        self.present(imagePicker, animated: true, completion: nil)
-    }
+    
+    // MARK: - ImagePickerDelegate
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
            
             let path = IndexPath(row:0, section: 0)
             let cell = tableview.cellForRow(at: path) as! ImageCell
-                cell.personalImage.image = pickedImage
-           
-                cell.personalImage.clipsToBounds = true
-           
+            cell.personalImage.image = pickedImage
+            cell.personalImage.clipsToBounds = true
+        
+            
             }
+       
         
-        
-            tableview.reloadData()
-            picker.dismiss(animated: true, completion: nil)
+        tableview.reloadData()
+        picker.dismiss(animated: true, completion: nil)
         }
+   
     
 }

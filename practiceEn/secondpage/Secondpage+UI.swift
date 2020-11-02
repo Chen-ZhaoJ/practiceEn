@@ -7,5 +7,11 @@
 //
 
 extension SecondpageViewController{
-    
+    func pickImage() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+    }
 }
