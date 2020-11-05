@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseStorage
+import FirebaseAuth
 
 
 
@@ -45,9 +48,12 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.systemGray6
+        
+       
     }
     override func viewWillAppear(_ animated: Bool) {
-      
+        
+        tableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,7 +69,8 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeatureCell", for: indexPath)as! FeatureCell
 //            cell.layer.backgroundColor = UIColor.orange.cgColor
             cell.isUserInteractionEnabled = false
-           
+            let forestRef =  Storage.storage().reference(withPath: "/practice-2955e.appspot.com/AppCodaUpload/\(Auth.auth().currentUser?.uid)/profilePhoto.jpg")
+            
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)as! CategoryCell

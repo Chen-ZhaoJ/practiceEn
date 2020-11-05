@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import Firebase
 import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 
 
 class SignupViewController: UIViewController {
@@ -52,6 +53,22 @@ class SignupViewController: UIViewController {
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
+                }
+                if let userData = user {
+                    print(userData.user.email)
+                    let dict: Dictionary<String,Any> = [
+                        "uid": userData.user.uid,
+                        "email": userData.user.email,
+                        "gender": "",
+                        "profileImageUrl": "",
+                        "purpose": ""
+                        
+                    ]
+                    Database.database().reference().child("users").child(userData.user.uid).updateChildValues(dict) { (error, ref) in
+                        if error == nil {
+                            print("Done")
+                        }
+                    }
                 }
             }
         }

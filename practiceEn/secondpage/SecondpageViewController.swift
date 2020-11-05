@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
+
 
 
 class SecondpageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -16,6 +20,7 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
  
     var name = ["ImageData","Name","Email","Gender","Learning purpose"]
     var detail = ["jpg","Lily","dorothy1290@gmail.com","F","My name is Lily. I was born on August 8, 1986. I am 25 years old. There are 4 people in my family, including my father, my mother, my sister, and me. I study in Ta-an Vocational High School. My favorite subject is English. My favorite person is Kobe Bryant because of his skill in basketball. My favorite song is “Memory”. Pizza is my favorite food. Discovery is my favorite TV program. I like to watch TV and play basketball in free time. In the future, I want to be an engineer. "]
+    var selectedImageFromPicker: UIImage?
 
     // MARK: - TableViewDataSource
    
@@ -94,7 +99,7 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-           
+            selectedImageFromPicker = pickedImage
             let path = IndexPath(row:0, section: 0)
             let cell = tableview.cellForRow(at: path) as! ImageCell
             cell.personalImage.image = pickedImage
@@ -102,6 +107,43 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         
             
             }
+        let uniqueString = NSUUID().uuidString
+        if let selectedImage = selectedImageFromPicker {
+            let  storageRef = Storage.storage().reference().child("AppCodaUpload").child("\(uniqueString).png")
+            if let uploadData = UIImagePNGRepresentation(selectedImage) {
+                storageRef.putData(uploadData, metadata: nil, completion: { (data, error) in
+                           
+                           if error != nil {
+                               
+                               // 若有接收到錯誤，我們就直接印在 Console 就好，在這邊就不另外做處理。
+                               print("Error: \(error!.localizedDescription)")
+                               return
+                           }
+                           
+                           // 連結取得方式就是：data?.downloadURL()?.absoluteString。
+                    storageRef.downloadURL(completion: { (url, error) in
+                        
+                        print("Image URL: \((url?.absoluteString)!)")
+                        let databaseRef = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("profileImageUrl")
+                        databaseRef.setValue(url?.absoluteString, withCompletionBlock: { (error, dataRef) in
+                                                
+                            if error != nil {
+                                                    
+                                print("Database Error: \(error!.localizedDescription)")
+                                            }
+                            else {
+                                                    
+                                print("圖片已儲存")
+                                }
+                                                
+                        })
+                    })
+                    
+                })
+            }
+                    
+            print("\(uniqueString), \(selectedImage)")
+        }
        
         
         tableview.reloadData()
