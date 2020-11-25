@@ -17,45 +17,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入帳號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uRo-DX-dbz">
-                                <rect key="frame" x="159" y="261" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-mw-BYj">
-                                <rect key="frame" x="188" y="421" width="38" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="登入"/>
-                                <connections>
-                                    <action selector="LoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oMJ-qN-b7l"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jer-RV-Zfh">
-                                <rect key="frame" x="192" y="484" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="註冊"/>
-                                <connections>
-                                    <segue destination="3hf-yZ-CgW" kind="show" id="7uE-LC-38C"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOw-qz-3QF">
-                                <rect key="frame" x="176" y="536" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="忘記密碼"/>
-                                <connections>
-                                    <segue destination="udg-0g-g5g" kind="show" id="nWN-UW-NO8"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-03-01f">
-                                <rect key="frame" x="159" y="341" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="7Q6-7u-wnk">
+                                <rect key="frame" x="159" y="261" width="99.5" height="114"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入帳號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uRo-DX-dbz">
+                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-03-01f">
+                                        <rect key="frame" x="0.0" y="80" width="99.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gYy-Oc-AiB">
+                                <rect key="frame" x="188" y="421" width="62" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-mw-BYj">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                        <state key="normal" title="登入"/>
+                                        <connections>
+                                            <action selector="LoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oMJ-qN-b7l"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jer-RV-Zfh">
+                                        <rect key="frame" x="0.0" y="45" width="62" height="30"/>
+                                        <state key="normal" title="註冊"/>
+                                        <connections>
+                                            <segue destination="3hf-yZ-CgW" kind="show" id="7uE-LC-38C"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOw-qz-3QF">
+                                        <rect key="frame" x="0.0" y="90" width="62" height="30"/>
+                                        <state key="normal" title="忘記密碼"/>
+                                        <connections>
+                                            <segue destination="udg-0g-g5g" kind="show" id="nWN-UW-NO8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gYy-Oc-AiB" secondAttribute="trailing" constant="164" id="6dD-i3-Kno"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gYy-Oc-AiB" secondAttribute="bottom" constant="321" id="6pB-qw-oeJ"/>
+                            <constraint firstItem="7Q6-7u-wnk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="217" id="9wU-EC-5T9"/>
+                            <constraint firstItem="gYy-Oc-AiB" firstAttribute="top" secondItem="7Q6-7u-wnk" secondAttribute="bottom" constant="46" id="QH1-sF-JS0"/>
+                            <constraint firstItem="7Q6-7u-wnk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="TXp-hf-y21"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Q6-7u-wnk" secondAttribute="trailing" constant="155.5" id="XWV-sW-X1x"/>
+                            <constraint firstItem="gYy-Oc-AiB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="188" id="pL7-vk-Rqb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z3W-OV-idM"/>
                     <connections>
@@ -142,31 +156,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vX0-q6-H9Z">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vX0-q6-H9Z">
                                 <rect key="frame" x="159" y="256" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-9L-gJo">
-                                <rect key="frame" x="118" y="367" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="送出"/>
-                                <connections>
-                                    <action selector="reset:" destination="udg-0g-g5g" eventType="touchUpInside" id="qqh-QH-GLu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFH-Hk-ncx">
-                                <rect key="frame" x="260" y="367" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="取消"/>
-                                <connections>
-                                    <segue destination="Jbh-4a-zuX" kind="unwind" unwindAction="dismissNextWithSegue:" id="I5i-a1-TDJ"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="111" translatesAutoresizingMaskIntoConstraints="NO" id="7Cb-zm-vcs">
+                                <rect key="frame" x="118" y="367" width="173" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-9L-gJo">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="送出"/>
+                                        <connections>
+                                            <action selector="reset:" destination="udg-0g-g5g" eventType="touchUpInside" id="qqh-QH-GLu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFH-Hk-ncx">
+                                        <rect key="frame" x="142" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="取消"/>
+                                        <connections>
+                                            <segue destination="Jbh-4a-zuX" kind="unwind" unwindAction="dismissNextWithSegue:" id="I5i-a1-TDJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="we6-Vi-pP5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="we6-Vi-pP5" firstAttribute="trailing" secondItem="vX0-q6-H9Z" secondAttribute="trailing" constant="158" id="1K8-DQ-M7S"/>
+                            <constraint firstItem="we6-Vi-pP5" firstAttribute="bottom" secondItem="7Cb-zm-vcs" secondAttribute="bottom" constant="465" id="33v-yJ-Urp"/>
+                            <constraint firstItem="vX0-q6-H9Z" firstAttribute="leading" secondItem="we6-Vi-pP5" secondAttribute="leading" constant="159" id="Ybp-1M-Efb"/>
+                            <constraint firstItem="7Cb-zm-vcs" firstAttribute="leading" secondItem="we6-Vi-pP5" secondAttribute="leading" constant="118" id="ijn-ll-SXE"/>
+                            <constraint firstItem="vX0-q6-H9Z" firstAttribute="top" secondItem="we6-Vi-pP5" secondAttribute="top" constant="212" id="k97-Ao-Tx7"/>
+                            <constraint firstItem="we6-Vi-pP5" firstAttribute="trailing" secondItem="7Cb-zm-vcs" secondAttribute="trailing" constant="123" id="sCb-hc-gry"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AsZ-27-psN"/>
                     <connections>

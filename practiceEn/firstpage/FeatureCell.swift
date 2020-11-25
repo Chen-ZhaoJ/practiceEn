@@ -14,6 +14,7 @@ class FeatureCell: UITableViewCell {
     
     @IBOutlet weak var userImage: UIImageView!
     
+    @IBOutlet weak var username: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         

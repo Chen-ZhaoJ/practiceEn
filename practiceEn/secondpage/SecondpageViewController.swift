@@ -13,14 +13,26 @@ import FirebaseDatabase
 
 
 
-class SecondpageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SecondpageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate ,DataEnteredDelegate {
+    
+    func userDidEnterInformation(nameData: [String]) {
+        detail = nameData
+     
+    }
+    
     
     @IBOutlet weak var tableview: UITableView!
     
  
-    var name = ["ImageData","Name","Email","Gender","Learning purpose"]
-    var detail = ["jpg","Lily","dorothy1290@gmail.com","F","My name is Lily. I was born on August 8, 1986. I am 25 years old. There are 4 people in my family, including my father, my mother, my sister, and me. I study in Ta-an Vocational High School. My favorite subject is English. My favorite person is Kobe Bryant because of his skill in basketball. My favorite song is “Memory”. Pizza is my favorite food. Discovery is my favorite TV program. I like to watch TV and play basketball in free time. In the future, I want to be an engineer. "]
+    var name = ["ImageData","Email","Gender","name","Learning purpose"]
+    var detail = [String]()
+    var genderdetail = [String]()
+    var namedetail:String = ""
+    var num:Int = 0
+
     var selectedImageFromPicker: UIImage?
+    var ref: DatabaseReference!
+    
 
     // MARK: - TableViewDataSource
    
@@ -40,8 +52,14 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath)as! DataCell
             cell.titleLabel.text = name[indexPath.item]
-            cell.detailLabel.text = name[indexPath.item]
-           
+            DispatchQueue.main.async {
+                
+                    
+            cell.detailLabel.text = self.detail[indexPath.item-1]
+              
+            }
+                                    
+        
             return cell
         }
        
@@ -51,12 +69,34 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         if indexPath.row == 0{
             pickImage()
         }
-        if indexPath.row == 1{
+        if indexPath.row == 3{
+           num = 3
             performSegue(withIdentifier: "name", sender: Any.self)
-        }else if indexPath.row == 2{
-            performSegue(withIdentifier: "email", sender: Any.self)
+            
+            
         }else if indexPath.row == 4{
             performSegue(withIdentifier: "glob", sender: Any.self)
+            ref = Database.database().reference()
+            let usersRef = self.ref.child("users").child(Auth.auth().currentUser!.uid)
+            usersRef.observe(.childChanged, with: {  (snapshot) in
+                let uploadData = snapshot.value as? String
+                if let actualUser = uploadData {
+//                    self.detail.insert("", at: 4)
+//                    self.detail.insert(actualUser, at: 3)
+//                    self.detail.remove(at: 4)
+                    
+                }
+            })
+            
+           
+        }else if indexPath.row == 2{
+            num = 2
+            
+            self.performSegue(withIdentifier: "gender", sender: Any.self)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath)as! DataCell
+            DispatchQueue.main.async {
+//                cell.detailLabel.text = self.genderdetail[indexPath.item-1]
+            }
         }
         
     }
@@ -68,8 +108,20 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         tableview.backgroundColor = UIColor.systemGray6
         tableview.estimatedRowHeight = 50.0
         tableview.rowHeight = UITableViewAutomaticDimension
-
-        // Do any additional setup after loading the view.
+        ref = Database.database().reference()
+        let usersRef = self.ref.child("users").child(Auth.auth().currentUser!.uid)
+        usersRef.observe(.childAdded, with: {  (snapshot) in
+            let uploadData = snapshot.value as? String
+            if let actualUser = uploadData {
+                self.detail.append(actualUser)
+               
+                print("裡面資料\(self.detail)")
+                
+                
+            }
+        })
+        self.tableview.reloadData()
+        
     }
    
     @IBAction func signOut(_ sender: Any) {
@@ -80,7 +132,60 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         self.navigationController?.pushViewController(controller, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+        if num == 2 {
+            
+            ref = Database.database().reference()
+                              let usersRef = self.ref.child("users").child(Auth.auth().currentUser!.uid)
+                              usersRef.observe(.childChanged, with: {  (snapshot) in
+                                  let uploadData = snapshot.value as? String
+                                  if let actualUser = uploadData {
+                                   self.detail.insert(actualUser, at: 1)
+                                   self.detail.remove(at: 2)
+                                    self.genderdetail = self.detail
+                                    print("二度載入裡面資料gender\(self.genderdetail)")
+                                  }
+                              })
+                              self.tableview.reloadData()
+                              
+                   
+        }
+      
+//        if num == 3 {
+//            ref = Database.database().reference()
+//                       let usersRef = self.ref.child("users").child(Auth.auth().currentUser!.uid)
+//                       usersRef.observe(.childChanged, with: {  (snapshot) in
+//                                 let uploadData = snapshot.value as? String
+//                                 if let actualUser = uploadData {
+//                                    self.namedetail = actualUser
+//                                    self.detail.insert(self.namedetail, at: 2)
+//                                    self.detail.remove(at: 3)
+//
+//
+//                                 }
+//                             })
+//            tableview.reloadData()
+//
+//                             print("二度載入裡面資料name\(detail)")
+//
+//
+//        }
+//
+
+
+        print(num)
        
+      
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "name" {
+            let cv = segue.destination as! NameViewController
+            cv.nameDetail = detail
+           
+            
+        }
+        
+        
     }
     
 
@@ -107,9 +212,10 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
         
             
             }
-        let uniqueString = NSUUID().uuidString
+        let uniqueString = Auth.auth().currentUser?.email
         if let selectedImage = selectedImageFromPicker {
-            let  storageRef = Storage.storage().reference().child("AppCodaUpload").child("\(uniqueString).png")
+            let  storageRef = Storage.storage().reference().child("AppCodaUpload").child("\(uniqueString ?? "the lat in the dictionary was nil!").png")
+            //轉為String
             if let uploadData = UIImagePNGRepresentation(selectedImage) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (data, error) in
                            
@@ -124,7 +230,7 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
                     storageRef.downloadURL(completion: { (url, error) in
                         
                         print("Image URL: \((url?.absoluteString)!)")
-                        let databaseRef = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("profileImageUrl")
+                        let databaseRef = Database.database().reference().child("users").child("\(Auth.auth().currentUser!.uid)ImageUrl").child("profileImageUrl")
                         databaseRef.setValue(url?.absoluteString, withCompletionBlock: { (error, dataRef) in
                                                 
                             if error != nil {
@@ -142,7 +248,7 @@ class SecondpageViewController: UIViewController,UITableViewDelegate,UITableView
                 })
             }
                     
-            print("\(uniqueString), \(selectedImage)")
+//            print("\(uniqueString), \(selectedImage)")
         }
        
         

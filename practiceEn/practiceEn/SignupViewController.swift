@@ -13,6 +13,7 @@ import FirebaseDatabase
 
 
 class SignupViewController: UIViewController {
+    var a = 0
     lazy var ref = Database.database().reference()
     let actionCodeSettings = ActionCodeSettings()
     @IBAction func createAction(_ sender: Any) {
@@ -55,21 +56,21 @@ class SignupViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
                 if let userData = user {
-                    print(userData.user.email)
+//                    print(userData.user.email)
                     let dict: Dictionary<String,Any> = [
-                        "uid": userData.user.uid,
-                        "email": userData.user.email,
-                        "gender": "",
-                        "profileImageUrl": "",
-                        "purpose": ""
-                        
+                        "name": userData.user.uid,
+                        "email": userData.user.email!,
+                        "gender": "please enter infromation",
+                        "purpose": "please enter infromation"
                     ]
                     Database.database().reference().child("users").child(userData.user.uid).updateChildValues(dict) { (error, ref) in
                         if error == nil {
+
                             print("Done")
                         }
                     }
                 }
+                
             }
         }
     }

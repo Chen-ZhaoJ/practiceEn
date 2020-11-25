@@ -39,21 +39,49 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
     
     
 
+    var userData = [String]()
+    var ref: DatabaseReference!
+    var db: DatabaseReference!
+
+    
     
     @IBOutlet weak var tableView: UITableView!
     
    
       
     override func viewDidLoad() {
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.systemGray6
+    
+        ref = Database.database().reference()
+        let usersRef = self.ref.child("users").child(Auth.auth().currentUser!.uid)
+        usersRef.observe(.childAdded, with: {  (snapshot) in
+            let uploadData = snapshot.value as? String
+
+            if let actualUser = uploadData {
+                self.userData.append(actualUser)
+                let path = IndexPath(row:0, section: 0)
+                let cell = self.tableView.cellForRow(at: path) as! FeatureCell
+                cell.username.text = self.userData[0]
+                self.tableView.reloadData()
+                
+               
+
+            }
+
+        })
         
+      
+        
+
        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-        
         tableView.reloadData()
+        print("裡面的資料\(self.userData)")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,7 +97,7 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeatureCell", for: indexPath)as! FeatureCell
 //            cell.layer.backgroundColor = UIColor.orange.cgColor
             cell.isUserInteractionEnabled = false
-            let forestRef =  Storage.storage().reference(withPath: "/practice-2955e.appspot.com/AppCodaUpload/\(Auth.auth().currentUser?.uid)/profilePhoto.jpg")
+            
             
             return cell
         }else {
@@ -83,6 +111,7 @@ class HomeTable: UIViewController,UITableViewDelegate,UITableViewDataSource,Your
         tableView.deselectRow(at: indexPath, animated: true)
 
     }
+    
    
 
     /*

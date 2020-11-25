@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0C89FC05228B9094B474F70E /* Pods_practiceEn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5272D44D9D2E089F97180B /* Pods_practiceEn.framework */; };
+		2A518BF2256CADC800847251 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A518BF1256CADC800847251 /* NameViewController.swift */; };
+		2A518BF5256E21A600847251 /* GlobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A518BF4256E21A600847251 /* GlobViewController.swift */; };
+		2A518BFC256E58FB00847251 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A518BFB256E58FB00847251 /* GenderViewController.swift */; };
 		2AF96D0225454C28008A8B33 /* SecondpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF96D0125454C28008A8B33 /* SecondpageViewController.swift */; };
 		2AF96D1A254565C7008A8B33 /* Secondpage+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF96D19254565C7008A8B33 /* Secondpage+UI.swift */; };
 		2AF96D1E254576F4008A8B33 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF96D1D254576F4008A8B33 /* ImageCell.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A518BF1256CADC800847251 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		2A518BF4256E21A600847251 /* GlobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobViewController.swift; sourceTree = "<group>"; };
+		2A518BFB256E58FB00847251 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		2AF96D0125454C28008A8B33 /* SecondpageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondpageViewController.swift; sourceTree = "<group>"; };
 		2AF96D19254565C7008A8B33 /* Secondpage+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secondpage+UI.swift"; sourceTree = "<group>"; };
 		2AF96D1D254576F4008A8B33 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
@@ -89,6 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				2AF96D0125454C28008A8B33 /* SecondpageViewController.swift */,
+				2A518BF1256CADC800847251 /* NameViewController.swift */,
+				2A518BFB256E58FB00847251 /* GenderViewController.swift */,
+				2A518BF4256E21A600847251 /* GlobViewController.swift */,
 				2AF96D19254565C7008A8B33 /* Secondpage+UI.swift */,
 				2AF96D1D254576F4008A8B33 /* ImageCell.swift */,
 				2AF96D2025457718008A8B33 /* DataCell.swift */,
@@ -294,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				903F42BD2523354D0024631C /* ViewController.swift in Sources */,
+				2A518BF5256E21A600847251 /* GlobViewController.swift in Sources */,
 				2AF96D0225454C28008A8B33 /* SecondpageViewController.swift in Sources */,
 				903DB98125265421008712E6 /* FeatureCell.swift in Sources */,
 				903DB987252654B6008712E6 /* LevelCell.swift in Sources */,
@@ -309,9 +319,11 @@
 				903F42CF252339030024631C /* SignupViewController.swift in Sources */,
 				90E7ABD32536DF9600717F26 /* SINViewController.swift in Sources */,
 				903F42BB2523354D0024631C /* SceneDelegate.swift in Sources */,
+				2A518BFC256E58FB00847251 /* GenderViewController.swift in Sources */,
 				903DB98325265445008712E6 /* CategoryCell.swift in Sources */,
 				B0154BDF252C5C98009E5E6B /* ResetPasswordViewController.swift in Sources */,
 				2AF96D2125457718008A8B33 /* DataCell.swift in Sources */,
+				2A518BF2256CADC800847251 /* NameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
