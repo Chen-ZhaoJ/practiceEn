@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P65-qf-e5Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P65-qf-e5Q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,21 +33,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gYy-Oc-AiB">
                                 <rect key="frame" x="188" y="421" width="62" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-mw-BYj">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-mw-BYj">
                                         <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
                                         <state key="normal" title="登入"/>
                                         <connections>
                                             <action selector="LoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oMJ-qN-b7l"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jer-RV-Zfh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jer-RV-Zfh">
                                         <rect key="frame" x="0.0" y="45" width="62" height="30"/>
                                         <state key="normal" title="註冊"/>
                                         <connections>
                                             <segue destination="3hf-yZ-CgW" kind="show" id="7uE-LC-38C"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOw-qz-3QF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOw-qz-3QF">
                                         <rect key="frame" x="0.0" y="90" width="62" height="30"/>
                                         <state key="normal" title="忘記密碼"/>
                                         <connections>
@@ -59,8 +57,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gYy-Oc-AiB" secondAttribute="trailing" constant="164" id="6dD-i3-Kno"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gYy-Oc-AiB" secondAttribute="bottom" constant="321" id="6pB-qw-oeJ"/>
@@ -70,6 +67,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Q6-7u-wnk" secondAttribute="trailing" constant="155.5" id="XWV-sW-X1x"/>
                             <constraint firstItem="gYy-Oc-AiB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="188" id="pL7-vk-Rqb"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z3W-OV-idM"/>
                     <connections>
@@ -164,14 +162,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="111" translatesAutoresizingMaskIntoConstraints="NO" id="7Cb-zm-vcs">
                                 <rect key="frame" x="118" y="367" width="173" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-9L-gJo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-9L-gJo">
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
                                         <state key="normal" title="送出"/>
                                         <connections>
                                             <action selector="reset:" destination="udg-0g-g5g" eventType="touchUpInside" id="qqh-QH-GLu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFH-Hk-ncx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFH-Hk-ncx">
                                         <rect key="frame" x="142" y="0.0" width="31" height="30"/>
                                         <state key="normal" title="取消"/>
                                         <connections>
@@ -181,8 +179,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="we6-Vi-pP5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="we6-Vi-pP5" firstAttribute="trailing" secondItem="vX0-q6-H9Z" secondAttribute="trailing" constant="158" id="1K8-DQ-M7S"/>
                             <constraint firstItem="we6-Vi-pP5" firstAttribute="bottom" secondItem="7Cb-zm-vcs" secondAttribute="bottom" constant="465" id="33v-yJ-Urp"/>
@@ -191,6 +188,7 @@
                             <constraint firstItem="vX0-q6-H9Z" firstAttribute="top" secondItem="we6-Vi-pP5" secondAttribute="top" constant="212" id="k97-Ao-Tx7"/>
                             <constraint firstItem="we6-Vi-pP5" firstAttribute="trailing" secondItem="7Cb-zm-vcs" secondAttribute="trailing" constant="123" id="sCb-hc-gry"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="we6-Vi-pP5"/>
                     </view>
                     <navigationItem key="navigationItem" id="AsZ-27-psN"/>
                     <connections>
@@ -234,9 +232,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="house" catalog="system" width="64" height="54"/>
     </resources>
 </document>
